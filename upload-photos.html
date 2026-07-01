@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Upload Wedding Photos</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #faf8f5;
+    color: #333;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #5a4a42;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 32px;
+  }
+  #drop-zone {
+    border: 3px dashed #c9b8ae;
+    border-radius: 16px;
+    background: #fff;
+    padding: 60px 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    max-width: 700px;
+    margin: 0 auto 32px;
+  }
+  #drop-zone.dragover {
+    border-color: #8b6b5e;
+    background: #fdf0eb;
+  }
+  #drop-zone .icon { font-size: 3rem; margin-bottom: 12px; }
+  #drop-zone p { color: #888; font-size: 0.95rem; margin-top: 8px; }
+  #drop-zone strong { color: #5a4a42; font-size: 1.1rem; }
+  #file-input { display: none; }
+
+  #progress-section { max-width: 700px; margin: 0 auto 32px; display: none; }
+  .file-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #ece8e3;
+  }
+  .file-thumb {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 6px;
+    background: #f0ebe5;
+    flex-shrink: 0;
+  }
+  .file-info { flex: 1; min-width: 0; }
+  .file-name { font-size: 0.85rem; color: #555; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .file-status { font-size: 0.8rem; margin-top: 2px; }
+  .status-pending { color: #aaa; }
+  .status-uploading { color: #e08c3a; }
+  .status-done { color: #4caf50; }
+  .status-error { color: #e53935; }
+
+  #results-section {
+    max-width: 700px;
+    margin: 0 auto;
+    display: none;
+  }
+  #results-section h2 {
+    font-size: 1.1rem;
+    color: #5a4a42;
+    margin-bottom: 12px;
+  }
+  #results-section p {
+    font-size: 0.88rem;
+    color: #777;
+    margin-bottom: 12px;
+  }
+  #url-output {
+    width: 100%;
+    height: 200px;
+    font-family: monospace;
+    font-size: 0.78rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    background: #f9f7f4;
+    resize: vertical;
+  }
+  .copy-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 24px;
+    background: #8b6b5e;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .copy-btn:hover { background: #7a5c50; }
+  .copy-btn.copied { background: #4caf50; }
+
+  #stats {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+
+<h1>💐 Upload Wedding Photos</h1>
+<p class="subtitle">Drag your photos below — they'll upload straight to Cloudinary</p>
+
+<div id="drop-zone" onclick="document.getElementById('file-input').click()">
+  <div class="icon">📷</div>
+  <strong>Drop photos here</strong>
+  <p>or click to browse — JPG, PNG, HEIC, all fine</p>
+</div>
+<input type="file" id="file-input" multiple accept="image/*">
+
+<div id="progress-section"></div>
+
+<div id="results-section">
+  <h2>✅ Upload complete — copy these URLs</h2>
+  <p>Paste everything in the text box back to Claude and he'll update the website.</p>
+  <textarea id="url-output" readonly></textarea>
+  <br>
+  <button class="copy-btn" onclick="copyAll()">Copy All URLs</button>
+  <div id="stats"></div>
+</div>
+
+<script>
+const CLOUD_NAME = 'dkoop646q';
+const UPLOAD_PRESET = 'wedding_photos';
+const ENDPOINT = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
+
+const dropZone = document.getElementById('drop-zone');
+const fileInput = document.getElementById('file-input');
+const progressSection = document.getElementById('progress-section');
+const resultsSection = document.getElementById('results-section');
+const urlOutput = document.getElementById('url-output');
+const statsEl = document.getElementById('stats');
+
+const uploadedUrls = [];
+let totalFiles = 0;
+let doneCount = 0;
+
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('dragover'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropZone.classList.remove('dragover');
+  handleFiles([...e.dataTransfer.files].filter(f => f.type.startsWith('image/') || f.name.match(/\.heic$/i)));
+});
+fileInput.addEventListener('change', () => {
+  handleFiles([...fileInput.files]);
+  fileInput.value = '';
+});
+
+function handleFiles(files) {
+  if (!files.length) return;
+  totalFiles += files.length;
+  progressSection.style.display = 'block';
+  dropZone.style.display = 'none';
+
+  files.forEach(file => {
+    const row = document.createElement('div');
+    row.className = 'file-row';
+
+    const thumb = document.createElement('img');
+    thumb.className = 'file-thumb';
+    thumb.src = URL.createObjectURL(file);
+
+    const info = document.createElement('div');
+    info.className = 'file-info';
+
+    const name = document.createElement('div');
+    name.className = 'file-name';
+    name.textContent = file.name;
+
+    const status = document.createElement('div');
+    status.className = 'file-status status-uploading';
+    status.textContent = 'Uploading…';
+
+    info.appendChild(name);
+    info.appendChild(status);
+    row.appendChild(thumb);
+    row.appendChild(info);
+    progressSection.appendChild(row);
+
+    uploadFile(file, status);
+  });
+}
+
+async function uploadFile(file, statusEl) {
+  const formData = new FormData();
+  formData.append('file', file);
+  formData.append('upload_preset', UPLOAD_PRESET);
+  formData.append('folder', 'wedding_photos');
+
+  try {
+    const res = await fetch(ENDPOINT, { method: 'POST', body: formData });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+
+    const url = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/f_auto,q_auto,c_fill,g_faces,w_700,h_500/${data.public_id}`;
+    uploadedUrls.push(url);
+
+    statusEl.className = 'file-status status-done';
+    statusEl.textContent = '✓ Uploaded';
+  } catch (err) {
+    statusEl.className = 'file-status status-error';
+    statusEl.textContent = '✗ Failed: ' + err.message;
+  }
+
+  doneCount++;
+  if (doneCount === totalFiles) showResults();
+}
+
+function showResults() {
+  resultsSection.style.display = 'block';
+  urlOutput.value = uploadedUrls.join('\n');
+  statsEl.textContent = `${uploadedUrls.length} of ${totalFiles} uploaded successfully`;
+  resultsSection.scrollIntoView({ behavior: 'smooth' });
+}
+
+function copyAll() {
+  navigator.clipboard.writeText(urlOutput.value).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy All URLs'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>
+</body>
+</html>

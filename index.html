@@ -1,1 +1,2512 @@
-init
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marie & James — March 27, 2027</title>
+  <meta name="description" content="Join us as we celebrate the marriage of James & Marie on March 27, 2027 at Garden Tuscana, Mesa, AZ." />
+  <meta name="theme-color" content="#FEF0F4" />
+  <meta property="og:title" content="Marie & James — March 27, 2027" />
+  <meta property="og:description" content="Join us as we celebrate the marriage of James & Marie on March 27, 2027 at Garden Tuscana, Mesa, AZ." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jamesmariehalaby.com" />
+  <!-- DNS + TCP pre-warm for every external host we'll hit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
+  <!-- Non-blocking font load: load as print then swap to all -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" /></noscript>
+  <!-- Preload home-section mosaic tiles (desktop) so they're in cache before JS runs -->
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/v1782797522/wedding_photos/q5trr5w9pppufqrpjahb.heic" />
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/v1782797524/wedding_photos/jeb8jhygs9s3sucoz5wr.heic" />
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/v1782797527/wedding_photos/dgfrn497bsuhojbpa33q.heic" />
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/v1782798823/wedding_photos/ljjruk7n00e1zor7z8h5.heic" />
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/v1782798825/wedding_photos/rwwli63aybcpjoxap2cu.heic" />
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/bbyizgukrggxrcysx4k6" />
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/t0maxhn0a9fdylcf3v76" />
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/cwlpiahyfmojs6jdxq0m" />
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/ehhypsrsgxxxrkp606lq" />
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/nvx56mtuuvxgmu2u0j9l" />
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/fekauwyofbabxxygpi5c" />
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/txtl4y8dckvksxeyfjcg" />
+  <!-- Cloudinary upload uses direct REST API — no widget script needed -->
+  <style>
+    /* ===================== RESET & BASE ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:    #FEF0F4;   /* blush pink background */
+      --cream2:   #F8DDE6;   /* deeper blush for accents */
+      --sage:     #7A9E7E;   /* sage green — wedding color */
+      --sage-d:   #5C7A5F;
+      --sage-l:   #B5CEB8;
+      --rose:     #CF6E8D;   /* vibrant rose pink — wedding color */
+      --rose-l:   #EDB5C9;
+      --brown:    #7A3B57;   /* deep plum-rose for headings */
+      --brown-d:  #4A1F35;
+      --text:     #4A1F35;   /* dark plum body text */
+      --text-l:   #8A5470;   /* muted rose secondary text */
+      --border:   #E8C2CE;   /* pink-tinted borders */
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+    }
+
+    /* ===================== NAV ===================== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(250, 245, 236, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      height: 72px;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--brown);
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      padding: 0 1.5rem 0 2rem;
+      border-right: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      flex: 1;
+      list-style: none;
+      align-items: stretch;
+    }
+
+    .nav-links li {
+      flex: 1;
+      display: flex;
+    }
+
+    .nav-links a {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-l);
+      text-decoration: none;
+      transition: color 0.2s, background 0.2s;
+      padding: 0 0.25rem;
+      border-bottom: 3px solid transparent;
+      text-align: center;
+    }
+
+    .nav-links a:hover {
+      color: var(--sage-d);
+      background: rgba(181, 206, 184, 0.12);
+    }
+
+    .nav-links a.active {
+      color: var(--sage-d);
+      border-bottom-color: var(--sage);
+      font-weight: 700;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0 1.25rem;
+      align-self: center;
+      margin-left: auto;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--brown);
+      transition: all 0.3s;
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px; left: 0; right: 0;
+      background: var(--cream);
+      border-bottom: 2px solid var(--border);
+      z-index: 200;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      min-height: 56px;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-l);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s, color 0.15s;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover,
+    .mobile-menu a:active {
+      background: var(--cream2);
+      color: var(--sage-d);
+    }
+
+    @media (max-width: 820px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* ===================== PHOTO MOSAIC BACKGROUND ===================== */
+    @keyframes mosaicReveal {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .bg-mosaic {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 2fr;
+      grid-template-rows: 32vh 36vh 32vh;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0;
+    }
+    .bg-mosaic.loaded {
+      animation: mosaicReveal 0.7s ease forwards;
+    }
+    .bg-mosaic-tile {
+      background-size: cover;
+      background-position: center;
+    }
+    .bg-mosaic-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(254,240,244,0.62);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* ===================== SECTIONS ===================== */
+    section {
+      display: none;
+      min-height: 100vh;
+      padding-top: 72px;
+      position: relative;
+      z-index: 2;
+    }
+    section.active { display: block; }
+
+    /* ===================== DECORATIVE SVG ===================== */
+    .leaf-divider {
+      text-align: center;
+      margin: 2rem 0;
+      color: var(--sage-l);
+      font-size: 1.2rem;
+      letter-spacing: 0.5rem;
+    }
+
+    .botanical-border {
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    /* ===================== HERO ===================== */
+    #home {
+      background: transparent;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #home.active {
+      display: flex;
+    }
+
+    .hero-bg-leaves {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.07;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 3rem;
+      max-width: 700px;
+      background: rgba(254, 240, 244, 0.88);
+      box-shadow: 0 4px 60px rgba(122, 59, 87, 0.12);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .hero-pre {
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--sage-d);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 10vw, 5.5rem);
+      font-weight: 300;
+      color: var(--brown);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-ampersand {
+      font-style: italic;
+      color: var(--rose);
+    }
+
+    .hero-date {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      font-weight: 300;
+      color: var(--text-l);
+      letter-spacing: 0.15em;
+      margin: 1.25rem 0;
+    }
+
+    .hero-venue {
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: var(--text-l);
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-venue strong {
+      font-weight: 700;
+      color: var(--brown);
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--sage);
+      color: #fff;
+      padding: 0.8rem 2.2rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover {
+      background: var(--sage-d);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--brown);
+      padding: 0.75rem 2rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border: 1px solid var(--brown);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      margin-left: 1rem;
+    }
+    .btn-outline:hover {
+      background: var(--brown);
+      color: #fff;
+    }
+
+    .countdown {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2.5rem 0;
+      flex-wrap: wrap;
+    }
+
+    .countdown-unit {
+      text-align: center;
+    }
+
+    .countdown-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--brown);
+      line-height: 1;
+    }
+
+    .countdown-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-l);
+      margin-top: 0.25rem;
+    }
+
+    .countdown-sep {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: var(--sage-l);
+      padding-top: 0.25rem;
+      align-self: flex-start;
+    }
+
+    /* ===================== PAGE HEADER ===================== */
+    .page-header {
+      text-align: center;
+      padding: 5rem 2rem 3rem;
+      background: linear-gradient(180deg, var(--cream2) 0%, var(--cream) 100%);
+    }
+
+    .page-header .label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage-d);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-header h2 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      color: var(--brown);
+      font-weight: 300;
+    }
+
+    .page-header p {
+      font-size: 0.95rem;
+      color: var(--text-l);
+      margin-top: 1rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    /* ---- Calendar buttons ---- */
+    .calendar-buttons {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .cal-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.25rem;
+      border-radius: 4px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-decoration: none;
+      border: 1.5px solid;
+      cursor: pointer;
+      background: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    .cal-btn--google { color: var(--sage-d); border-color: var(--sage-d); }
+    .cal-btn--google:hover { background: var(--sage-d); color: #fff; }
+    .cal-btn--apple  { color: var(--brown);  border-color: var(--brown);  }
+    .cal-btn--apple:hover  { background: var(--brown);  color: #fff; }
+
+    /* ===================== SCHEDULE ===================== */
+    .schedule-container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2.5rem 3rem 5rem;
+      background: rgba(254, 240, 244, 0.90);
+      box-shadow: 0 4px 60px rgba(122, 59, 87, 0.12);
+      border-radius: 2px;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 2.5rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--sage-l);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.12rem;
+      top: 0.4rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--sage);
+      border: 2px solid var(--cream);
+      box-shadow: 0 0 0 2px var(--sage);
+    }
+
+    .timeline-time {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sage-d);
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-event {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--sage-d);
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-detail {
+      font-size: 0.88rem;
+      color: var(--text-l);
+      line-height: 1.6;
+    }
+
+    /* ===================== TRAVEL ===================== */
+    .travel-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 3rem 5rem;
+      background: rgba(254, 240, 244, 0.90);
+      box-shadow: 0 4px 60px rgba(122, 59, 87, 0.12);
+      border-radius: 2px;
+    }
+
+    .travel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 650px) {
+      .travel-grid { grid-template-columns: 1fr; }
+    }
+
+    .travel-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .travel-card .icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .travel-card h3 {
+      font-size: 1.4rem;
+      color: var(--brown);
+      margin-bottom: 0.5rem;
+    }
+
+    .travel-card p {
+      font-size: 0.88rem;
+      color: var(--text-l);
+      line-height: 1.7;
+    }
+
+    .travel-card a {
+      color: var(--sage-d);
+      text-decoration: none;
+    }
+    .travel-card a:hover { text-decoration: underline; }
+
+    .hotel-list {
+      margin-top: 1rem;
+    }
+
+    .hotel-item {
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      margin-bottom: 1rem;
+      background: #fff;
+    }
+    .hotel-item--featured {
+      border-color: var(--sage);
+      border-width: 2px;
+      background: linear-gradient(135deg, #fff 80%, rgba(181,206,184,0.15));
+    }
+
+    .hotel-item h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--brown);
+    }
+
+    .hotel-item h4 a {
+      color: var(--brown);
+      text-decoration: none;
+    }
+    .hotel-item h4 a:hover {
+      color: var(--sage-d);
+      text-decoration: underline;
+    }
+
+    .hotel-item p {
+      font-size: 0.85rem;
+      color: var(--text-l);
+      margin-top: 0.25rem;
+    }
+
+    .hotel-contact {
+      margin-top: 0.4rem !important;
+    }
+    .hotel-contact a {
+      color: var(--sage-d);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+    .hotel-contact a:hover { text-decoration: underline; }
+
+    .hotel-tier-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--sage-d);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin: 1.75rem 0 0.75rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--sage-l);
+    }
+    .hotel-item p strong { color: var(--sage-d); }
+
+    .hotel-item .tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--sage-l);
+      color: var(--sage-d);
+      padding: 0.15rem 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .map-embed {
+      width: 100%;
+      height: 320px;
+      border: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+
+    /* ===================== REGISTRY ===================== */
+    .registry-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 3rem 5rem;
+      background: rgba(254, 240, 244, 0.90);
+      box-shadow: 0 4px 60px rgba(122, 59, 87, 0.12);
+      border-radius: 2px;
+    }
+
+    .registry-note {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--text-l);
+      margin-bottom: 3rem;
+      line-height: 1.7;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Registry pyramid layout */
+    .registry-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .registry-fund-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .registry-fund-wrap .registry-card--fund {
+      width: 100%;
+      max-width: 420px;
+    }
+    .registry-fund-wrap .fund-panel {
+      width: 100%;
+      max-width: 420px;
+    }
+    .registry-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 500px) {
+      .registry-grid { grid-template-columns: 1fr; }
+      .registry-fund-wrap .registry-card--fund,
+      .registry-fund-wrap .fund-panel { max-width: 100%; }
+    }
+
+    .registry-card {
+      border: 1px solid var(--border);
+      background: #fff;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: block;
+    }
+
+    .registry-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+    }
+
+    .registry-card .registry-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .registry-card h3 {
+      font-size: 1.4rem;
+      color: var(--brown);
+      margin-bottom: 0.4rem;
+    }
+
+    .registry-card p {
+      font-size: 0.82rem;
+      color: var(--text-l);
+    }
+
+    .registry-card .arrow {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--sage-d);
+      text-transform: uppercase;
+    }
+
+    /* ---- Honeymoon Fund card ---- */
+    .registry-card--fund {
+      cursor: pointer;
+      user-select: none;
+    }
+    .registry-card--fund .fund-toggle-label {
+      transition: transform 0.25s ease;
+      display: inline-block;
+    }
+    .registry-card--fund.open .fund-toggle-label {
+      transform: rotate(180deg);
+    }
+
+    /* ---- Fund panel (hidden by default) ---- */
+    .fund-panel {
+      display: none;
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background: rgba(181,206,184,0.12);
+      border: 1px solid var(--sage-l);
+      border-radius: 2px;
+      text-align: center;
+    }
+    .fund-panel.open {
+      display: block;
+      animation: fundReveal 0.22s ease both;
+    }
+    @keyframes fundReveal {
+      from { opacity: 0; transform: translateY(-6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fund-intro {
+      font-size: 0.9rem;
+      color: var(--text-l);
+      margin-bottom: 1.25rem;
+    }
+    .fund-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+    .fund-btn {
+      display: inline-block;
+      padding: 0.75rem 2.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: #fff;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+    .fund-btn:hover { opacity: 0.85; transform: translateY(-2px); }
+    .fund-btn--venmo  { background: #008CFF; }
+    .fund-btn--paypal { background: #003087; }
+    @media (max-width: 480px) {
+      .fund-buttons { flex-direction: column; align-items: stretch; }
+      .fund-btn { text-align: center; }
+    }
+
+    /* ===================== FAQ ===================== */
+    .faq-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.5rem 3rem 5rem;
+      background: rgba(254, 240, 244, 0.90);
+      box-shadow: 0 4px 60px rgba(122, 59, 87, 0.12);
+      border-radius: 2px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 1.25rem 0;
+      background: none;
+      border: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--sage-d);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .faq-question:hover { color: var(--sage-d); }
+
+    .faq-chevron {
+      font-size: 1rem;
+      color: var(--sage);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s;
+    }
+
+    .faq-answer.open {
+      max-height: 400px;
+      padding-bottom: 1.25rem;
+    }
+
+    .faq-answer p {
+      font-size: 0.9rem;
+      color: var(--text-l);
+      line-height: 1.8;
+    }
+
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    /* ===================== RSVP ===================== */
+    #rsvp {
+      background: transparent;
+    }
+
+    .rsvp-container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 2.5rem 3rem 5rem;
+      background: rgba(254, 240, 244, 0.90);
+      box-shadow: 0 4px 60px rgba(122, 59, 87, 0.12);
+      border-radius: 2px;
+    }
+
+    .rsvp-deadline {
+      text-align: center;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      color: var(--rose);
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 500px) {
+      .form-row { grid-template-columns: 1fr; }
+      .btn-outline { margin-left: 0; margin-top: 0.75rem; }
+    }
+
+    label {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-l);
+      margin-bottom: 0.4rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      appearance: none;
+      transition: border-color 0.2s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--sage);
+    }
+
+    textarea { resize: vertical; min-height: 80px; }
+
+    .radio-group {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.25rem;
+    }
+
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 0.88rem;
+      color: var(--text);
+      cursor: pointer;
+      margin-bottom: 0;
+    }
+
+    .radio-group input[type="radio"] {
+      width: auto;
+      accent-color: var(--sage);
+    }
+
+    .guest-block {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .guest-block-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--brown);
+      margin-bottom: 1rem;
+    }
+
+    .form-section-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--brown);
+      margin: 2rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--sage);
+      color: #fff;
+      padding: 1rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .submit-btn:hover { background: var(--sage-d); }
+
+    .rsvp-success {
+      display: none;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    .rsvp-success .checkmark {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .rsvp-success h3 {
+      font-size: 2rem;
+      color: var(--brown);
+      margin-bottom: 0.75rem;
+    }
+
+    .rsvp-success p {
+      color: var(--text-l);
+      line-height: 1.7;
+    }
+
+    /* ===================== FOOTER ===================== */
+    footer {
+      background: var(--brown-d);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+    }
+
+    footer strong {
+      color: rgba(255,255,255,0.9);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    /* ===================== FLOWER ORNAMENTS ===================== */
+    .ornament {
+      text-align: center;
+      color: var(--sage-l);
+      font-size: 1.1rem;
+      letter-spacing: 0.4rem;
+      margin: 1.5rem 0;
+    }
+
+    /* ===================== PHOTOS ===================== */
+    .photos-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2.5rem 3rem 5rem;
+      text-align: center;
+      background: rgba(254, 240, 244, 0.90);
+      box-shadow: 0 4px 60px rgba(122, 59, 87, 0.12);
+      border-radius: 2px;
+    }
+
+    .photos-intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--text-l);
+      line-height: 1.7;
+      max-width: 420px;
+      margin: 0 auto 2.5rem;
+    }
+
+    /* Big tap zone */
+    .upload-zone {
+      border: 2px dashed var(--sage-l);
+      background: #fff;
+      border-radius: 4px;
+      padding: 3.5rem 2rem;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      max-width: 420px;
+      margin: 0 auto 2rem;
+      user-select: none;
+    }
+    .upload-zone:hover, .upload-zone:active {
+      border-color: var(--sage);
+      background: var(--cream2);
+    }
+    .upload-zone-icon { font-size: 3.5rem; line-height: 1; margin-bottom: 1rem; }
+    .upload-zone-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--brown);
+      margin-bottom: 0.5rem;
+    }
+    .upload-zone-sub {
+      font-size: 0.85rem;
+      color: var(--text-l);
+      line-height: 1.6;
+    }
+
+    /* Progress */
+    .upload-progress-wrap {
+      max-width: 420px;
+      margin: 0 auto 1.5rem;
+    }
+    .upload-progress-bar-bg {
+      height: 6px;
+      background: var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 0.6rem;
+    }
+    .upload-progress-bar {
+      height: 100%;
+      background: var(--sage);
+      border-radius: 3px;
+      width: 0%;
+      transition: width 0.3s;
+    }
+    .upload-status-text {
+      font-size: 0.85rem;
+      color: var(--text-l);
+    }
+
+    /* Done state */
+    .upload-done-wrap {
+      max-width: 420px;
+      margin: 0 auto 2rem;
+      padding: 2rem;
+      background: #fff;
+      border: 1px solid var(--sage-l);
+    }
+    .upload-done-icon {
+      font-size: 2.5rem;
+      color: var(--sage-d);
+      margin-bottom: 0.5rem;
+    }
+    .upload-done-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      color: var(--sage-d);
+      margin-bottom: 1.25rem;
+    }
+    .btn-upload-more {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-l);
+      border: 1px solid var(--border);
+      background: transparent;
+      padding: 0.65rem 1.5rem;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-upload-more:hover { border-color: var(--sage); color: var(--sage-d); }
+
+    /* Preview grid */
+    .photo-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .photo-preview-item {
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: var(--cream2);
+      position: relative;
+    }
+    .photo-preview-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .photo-preview-item .preview-uploading {
+      position: absolute; inset: 0;
+      background: rgba(250,245,236,0.7);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+    }
+    .photo-preview-item .preview-done {
+      position: absolute; inset: 0;
+      background: rgba(92,122,95,0.25);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 1.5rem;
+    }
+
+    /* Error banner */
+    .upload-error {
+      max-width: 420px;
+      margin: 0 auto 1rem;
+      padding: 0.75rem 1rem;
+      background: #fff0ef;
+      border: 1px solid var(--rose);
+      font-size: 0.83rem;
+      color: var(--brown);
+      display: none;
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+
+    /* Tablet */
+    @media (max-width: 768px) {
+      .travel-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero-inner {
+        padding: 3rem 1.5rem;
+      }
+      .page-header {
+        padding: 4rem 1.5rem 2.5rem;
+      }
+      .countdown {
+        gap: 1.25rem;
+      }
+      .countdown-num {
+        font-size: 2.5rem;
+      }
+      .countdown-sep {
+        font-size: 2rem;
+      }
+      section {
+        padding-top: 72px;
+      }
+    }
+
+    /* Large phone / small tablet */
+    @media (max-width: 600px) {
+      .travel-grid {
+        grid-template-columns: 1fr;
+      }
+      .photo-preview-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .registry-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      .nav-logo {
+        font-size: 1.05rem;
+        padding: 0 1rem 0 1rem;
+      }
+      .hero-inner {
+        padding: 2rem 1rem;
+      }
+      .countdown {
+        gap: 0.6rem;
+      }
+      .countdown-num {
+        font-size: 1.9rem;
+      }
+      .countdown-sep {
+        font-size: 1.6rem;
+        padding-top: 0.3rem;
+      }
+      .countdown-label {
+        font-size: 0.58rem;
+      }
+      .page-header {
+        padding: 3rem 1rem 2rem;
+      }
+      .page-header h2 {
+        font-size: clamp(1.8rem, 7vw, 3rem);
+      }
+      .bg-mosaic {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(6, 16.67vh);
+      }
+      .schedule-container,
+      .travel-container,
+      .registry-container,
+      .faq-container,
+      .rsvp-container,
+      .photos-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .timeline {
+        padding-left: 1.75rem;
+      }
+      .travel-card {
+        padding: 1.5rem;
+      }
+      .map-embed {
+        height: 240px;
+      }
+      .hotel-item {
+        padding: 1rem;
+      }
+      .faq-question {
+        font-size: 1.15rem;
+        padding: 1rem 0;
+        min-height: 56px;
+      }
+      .btn-primary, .btn-outline {
+        display: block;
+        margin-left: 0;
+        margin-top: 0.75rem;
+        text-align: center;
+        padding: 1rem 1.5rem;
+        font-size: 0.85rem;
+      }
+.guest-block {
+        padding: 1rem;
+      }
+      /* Bigger inputs on mobile */
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      select,
+      textarea {
+        font-size: 1rem;
+        padding: 0.85rem 1rem;
+        min-height: 48px;
+      }
+      .submit-btn {
+        font-size: 1rem;
+        padding: 1.1rem;
+        min-height: 56px;
+        letter-spacing: 0.1em;
+      }
+      /* Attend buttons stack nicely */
+      .attend-option {
+        min-height: 80px;
+        padding: 1rem;
+      }
+      .attend-icon {
+        font-size: 1.5rem;
+      }
+      /* Registry cards full width */
+      .registry-card {
+        padding: 2rem 1.5rem;
+      }
+      /* Timeline */
+      .timeline-event {
+        font-size: 1.35rem;
+      }
+    }
+
+    /* Very small phones */
+    @media (max-width: 360px) {
+      .countdown {
+        gap: 0.4rem;
+      }
+      .countdown-num {
+        font-size: 1.65rem;
+      }
+      .countdown-sep {
+        font-size: 1.4rem;
+      }
+    }
+
+    /* ===================== UTILITY ===================== */
+    .text-center { text-align: center; }
+    .mt-1 { margin-top: 1rem; }
+    .mt-2 { margin-top: 2rem; }
+
+    /* ===================== SELECT WRAPPER ===================== */
+    .select-wrapper {
+      position: relative;
+    }
+    .select-wrapper::after {
+      content: '▾';
+      position: absolute;
+      right: 0.9rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-l);
+      pointer-events: none;
+    }
+    .select-wrapper select {
+      padding-right: 2rem;
+    }
+
+    /* ===================== ATTEND BUTTONS ===================== */
+    .attend-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 0.25rem;
+    }
+
+    .attend-option {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1.25rem 1rem;
+      border: 2px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      text-align: center;
+      min-height: 90px;
+    }
+
+    .attend-option:hover {
+      border-color: var(--sage-l);
+      background: var(--cream2);
+    }
+
+    .attend-option.selected {
+      border-color: var(--sage);
+      background: rgba(181, 206, 184, 0.15);
+    }
+
+    .attend-icon {
+      font-size: 1.75rem;
+      line-height: 1;
+    }
+
+    .attend-text {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-l);
+      font-family: 'Lato', sans-serif;
+    }
+
+    .attend-option.selected .attend-text {
+      color: var(--sage-d);
+      font-weight: 700;
+    }
+
+    @media (max-width: 400px) {
+      .attend-buttons { grid-template-columns: 1fr; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ==================== PHOTO MOSAIC BACKGROUND ==================== -->
+<div class="bg-mosaic" aria-hidden="true">
+  <div class="bg-mosaic-tile"></div>
+  <div class="bg-mosaic-tile"></div>
+  <div class="bg-mosaic-tile"></div>
+  <div class="bg-mosaic-tile"></div>
+  <div class="bg-mosaic-tile"></div>
+  <div class="bg-mosaic-tile"></div>
+  <div class="bg-mosaic-tile"></div>
+  <div class="bg-mosaic-tile"></div>
+  <div class="bg-mosaic-tile"></div>
+  <div class="bg-mosaic-tile"></div>
+  <div class="bg-mosaic-tile"></div>
+  <div class="bg-mosaic-tile"></div>
+</div>
+<div class="bg-mosaic-overlay" aria-hidden="true"></div>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav>
+  <div class="nav-logo" onclick="showSection('home')">M &amp; J</div>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showSection('home'); return false;" id="nav-home" class="active">Home</a></li>
+    <li><a href="#" onclick="showSection('registry'); return false;" id="nav-registry">Registry</a></li>
+    <li><a href="#" onclick="showSection('schedule'); return false;" id="nav-schedule">Schedule</a></li>
+    <li><a href="#" onclick="showSection('travel'); return false;" id="nav-travel">Travel</a></li>
+    <li><a href="#" onclick="showSection('faq'); return false;" id="nav-faq">FAQs</a></li>
+    <li><a href="#" onclick="showSection('photos'); return false;" id="nav-photos">Photos</a></li>
+    <li><a href="#" onclick="showSection('rsvp'); return false;" id="nav-rsvp">RSVP</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMobile()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" onclick="showSection('home'); closeMobile(); return false;">Home</a>
+  <a href="#" onclick="showSection('registry'); closeMobile(); return false;">Registry</a>
+  <a href="#" onclick="showSection('schedule'); closeMobile(); return false;">Schedule</a>
+  <a href="#" onclick="showSection('travel'); closeMobile(); return false;">Travel</a>
+  <a href="#" onclick="showSection('faq'); closeMobile(); return false;">FAQs</a>
+  <a href="#" onclick="showSection('photos'); closeMobile(); return false;">Photos</a>
+  <a href="#" onclick="showSection('rsvp'); closeMobile(); return false;">RSVP</a>
+</div>
+
+<!-- ==================== HOME ==================== -->
+<section id="home" class="active">
+  <!-- Background botanical SVG -->
+  <svg class="hero-bg-leaves" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#7A9E7E">
+      <!-- Large leaf top-left -->
+      <ellipse cx="80" cy="80" rx="60" ry="20" transform="rotate(-40 80 80)"/>
+      <ellipse cx="50" cy="120" rx="50" ry="15" transform="rotate(-60 50 120)"/>
+      <ellipse cx="120" cy="50" rx="45" ry="12" transform="rotate(-20 120 50)"/>
+      <!-- Branches -->
+      <rect x="85" y="60" width="1.5" height="80" rx="1" transform="rotate(-35 85 60)" fill="#5C7A5F"/>
+      <!-- Bottom right cluster -->
+      <ellipse cx="720" cy="520" rx="70" ry="22" transform="rotate(40 720 520)"/>
+      <ellipse cx="760" cy="480" rx="55" ry="16" transform="rotate(60 760 480)"/>
+      <ellipse cx="680" cy="555" rx="50" ry="14" transform="rotate(20 680 555)"/>
+      <rect x="720" y="500" width="1.5" height="80" rx="1" transform="rotate(35 720 500)" fill="#5C7A5F"/>
+      <!-- Top right -->
+      <ellipse cx="740" cy="60" rx="55" ry="18" transform="rotate(50 740 60)"/>
+      <ellipse cx="770" cy="100" rx="40" ry="12" transform="rotate(70 770 100)"/>
+      <!-- Bottom left -->
+      <ellipse cx="60" cy="520" rx="55" ry="18" transform="rotate(-50 60 520)"/>
+      <ellipse cx="30" cy="480" rx="40" ry="12" transform="rotate(-70 30 480)"/>
+      <!-- Center decorative dots -->
+      <circle cx="400" cy="50" r="3" opacity="0.5"/>
+      <circle cx="390" cy="560" r="3" opacity="0.5"/>
+      <circle cx="30" cy="300" r="3" opacity="0.5"/>
+      <circle cx="770" cy="300" r="3" opacity="0.5"/>
+    </g>
+  </svg>
+
+  <div class="hero-inner">
+    <p class="hero-pre">We're getting married</p>
+
+    <h1 class="hero-names">
+      Marie<br>
+      <span class="hero-ampersand">&amp;</span><br>
+      James
+    </h1>
+
+    <p class="hero-date">March 27, 2027</p>
+
+    <div class="ornament">— ✦ —</div>
+
+    <p class="hero-venue">
+      <strong>Garden Tuscana Reception Hall</strong><br>
+      1940 E Main St · Mesa, Arizona
+    </p>
+
+    <div class="countdown" id="countdown">
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-days">—</div>
+        <div class="countdown-label">Days</div>
+      </div>
+      <div class="countdown-sep">·</div>
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-hours">—</div>
+        <div class="countdown-label">Hours</div>
+      </div>
+      <div class="countdown-sep">·</div>
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-mins">—</div>
+        <div class="countdown-label">Minutes</div>
+      </div>
+      <div class="countdown-sep">·</div>
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-secs">—</div>
+        <div class="countdown-label">Seconds</div>
+      </div>
+    </div>
+
+    <div>
+      <a href="#" class="btn-primary" onclick="showSection('rsvp'); return false;">RSVP Now</a>
+      <a href="#" class="btn-outline" onclick="showSection('schedule'); return false;">View Details</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SCHEDULE ==================== -->
+<section id="schedule">
+  <div class="page-header">
+    <p class="label">The Big Day</p>
+    <h2>Day-of Schedule</h2>
+    <p>Saturday, March 27, 2027 at Garden Tuscana Reception Hall</p>
+    <div class="calendar-buttons">
+      <a class="cal-btn cal-btn--google"
+         href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Marie+%26+James+Wedding&dates=20270327T170000%2F20270327T230000&ctz=America%2FPhoenix&details=Wedding+ceremony+%26+reception+of+Marie+%26+James!&location=Garden+Tuscana%2C+1940+E+Main+St%2C+Mesa%2C+AZ+85203"
+         target="_blank">Add to Google Calendar</a>
+      <button class="cal-btn cal-btn--apple" onclick="downloadICS()">Add to Apple Calendar</button>
+    </div>
+  </div>
+
+  <div class="schedule-container">
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-time">4:30 PM</div>
+        <div class="timeline-event">Guests Arrive</div>
+        <div class="timeline-detail">Doors open — find your seats and enjoy a welcome drink as we prepare to begin.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">5:00 PM</div>
+        <div class="timeline-event">Ceremony</div>
+        <div class="timeline-detail">Marie and James exchange their vows in the garden at Garden Tuscana. Please be seated by 4:50 PM.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">5:30 PM</div>
+        <div class="timeline-event">Cocktail Hour</div>
+        <div class="timeline-detail">Enjoy drinks, light bites, and great company while the wedding party takes photos.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">6:30 PM</div>
+        <div class="timeline-event">Reception Dinner</div>
+        <div class="timeline-detail">Be seated for dinner, toasts, and celebration. A plated dinner will be served.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">7:15 PM</div>
+        <div class="timeline-event">First Dance &amp; Toasts</div>
+        <div class="timeline-detail">Marie and James take the dance floor, followed by toasts from the wedding party.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">8:00 PM</div>
+        <div class="timeline-event">Dancing &amp; Celebration</div>
+        <div class="timeline-detail">The dance floor is open! Cake cutting, dancing, and celebrating all night long.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">11:00 PM</div>
+        <div class="timeline-event">Last Dance &amp; Send-Off</div>
+        <div class="timeline-detail">We'll end the night with a special send-off. Don't miss it!</div>
+      </div>
+
+    </div>
+
+    <div class="ornament mt-2">— ✦ —</div>
+
+    <p style="text-align:center; font-size:0.85rem; color:var(--text-l); font-style:italic;">
+      Schedule is subject to minor adjustments. We'll keep you posted!
+    </p>
+  </div>
+</section>
+
+<!-- ==================== TRAVEL ==================== -->
+<section id="travel">
+  <div class="page-header">
+    <p class="label">Getting Here</p>
+    <h2>Travel &amp; Stay</h2>
+    <p>Everything you need to make your way to Mesa, Arizona</p>
+  </div>
+
+  <div class="travel-container">
+
+    <div class="travel-grid">
+      <div class="travel-card">
+        <div class="icon">✈️</div>
+        <h3>Nearest Airport</h3>
+        <p>
+          <strong>Phoenix Sky Harbor International (PHX)</strong><br>
+          Approximately 20 minutes from the venue.<br><br>
+          <strong>Phoenix-Mesa Gateway (AZA)</strong><br>
+          Only 10 minutes away — served by Allegiant and Sun Country.
+        </p>
+      </div>
+
+      <div class="travel-card">
+        <div class="icon">📍</div>
+        <h3>Venue Address</h3>
+        <p>
+          Garden Tuscana Reception Hall<br>
+          1940 E Main St<br>
+          Mesa, AZ 85203<br><br>
+          <a href="https://maps.google.com/?q=1940+E+Main+St+Mesa+AZ+85203" target="_blank">Open in Google Maps →</a><br>
+          <a href="https://maps.apple.com/?q=Garden+Tuscana&address=1940+E+Main+St,Mesa,AZ+85203" target="_blank">Open in Apple Maps →</a>
+        </p>
+      </div>
+
+      <div class="travel-card">
+        <div class="icon">🚗</div>
+        <h3>Parking</h3>
+        <p>
+          Complimentary parking is available on-site at Garden Tuscana. Rideshare drop-off is also conveniently located at the main entrance.
+        </p>
+      </div>
+
+      <div class="travel-card">
+        <div class="icon">🌡️</div>
+        <h3>Weather</h3>
+        <p>
+          Mesa in late March is beautiful — expect sunny skies and temps around <strong>75–80°F (24–27°C)</strong> during the day, cooling to 55–60°F (13–16°C) in the evening. A light layer is recommended for the send-off!
+        </p>
+      </div>
+    </div>
+
+    <h3 class="form-section-label">Where to Stay</h3>
+    <p style="font-size:0.88rem; color:var(--text-l); margin-bottom:1.5rem;">We recommend booking early — Mesa fills up fast in spring, especially during Cubs spring training!</p>
+
+    <div class="hotel-list">
+
+      <p class="hotel-tier-label">⭐ Our Top Pick</p>
+
+      <div class="hotel-item hotel-item--featured">
+        <h4><a href="https://www.marriott.com/en-us/hotels/phxww-sheraton-mesa-hotel-at-wrigleyville-west/overview/" target="_blank">Sheraton Mesa Hotel at Wrigleyville West</a></h4>
+        <p>860 N Riverview, Mesa, AZ 85201 · <strong>~10 min from venue</strong></p>
+        <p style="font-size:0.83rem; color:var(--text-l); margin-top:0.3rem;">Right next to Sloan Park — Cubs spring training games happen the same weekend. A great excuse to extend your trip!</p>
+        <p class="hotel-contact"><a href="tel:+14806641221">(480) 664-1221</a></p>
+        <span class="tag">Closest · Best Value</span>
+      </div>
+
+      <p class="hotel-tier-label">Resort & Luxury (~20–25 min)</p>
+
+      <div class="hotel-item">
+        <h4><a href="https://www.globalambassadorhotel.com/" target="_blank">The Global Ambassador</a></h4>
+        <p>4360 E Camelback Rd, Phoenix, AZ 85018 · <strong>~20 min from venue</strong></p>
+        <p style="font-size:0.83rem; color:var(--text-l); margin-top:0.3rem;">Phoenix's buzziest boutique luxury hotel — Forbes 5-star, stunning rooftop, phenomenal restaurants. A real splurge-worthy experience.</p>
+        <p class="hotel-contact"><a href="tel:+14808002211">(480) 800-2211</a></p>
+        <span class="tag">Luxury · Boutique</span>
+      </div>
+
+      <div class="hotel-item">
+        <h4><a href="https://www.thephoenician.com/" target="_blank">The Phoenician, A Luxury Collection Resort</a></h4>
+        <p>6000 E Camelback Rd, Scottsdale, AZ 85251 · <strong>~25 min from venue</strong></p>
+        <p style="font-size:0.83rem; color:var(--text-l); margin-top:0.3rem;">Iconic Scottsdale resort with world-class spa, multiple pools, and sweeping Camelback Mountain views. Perfect for guests making a full weekend of it.</p>
+        <p class="hotel-contact"><a href="tel:+14809418200">(480) 941-8200</a></p>
+        <span class="tag">Iconic · Resort</span>
+      </div>
+
+      <p class="hotel-tier-label">Solid Nearby Options (~10–15 min)</p>
+
+      <div class="hotel-item">
+        <h4><a href="https://www.marriott.com/en-us/hotels/phxde-delta-hotels-phoenix-mesa/overview/" target="_blank">Delta Hotels by Marriott Phoenix Mesa</a></h4>
+        <p>200 N Centennial Way, Mesa, AZ 85201 · <strong>~10 min from venue</strong></p>
+        <p style="font-size:0.83rem; color:var(--text-l); margin-top:0.3rem;">A polished Marriott upscale property right in the heart of Mesa — solid rooms, easy parking, and minutes from the venue. A reliable pick at a fair price point.</p>
+        <p class="hotel-contact"><a href="tel:+14808988300">(480) 898-8300</a></p>
+        <span class="tag">Upscale</span>
+      </div>
+
+      <div class="hotel-item">
+        <h4><a href="https://www.marriott.com/en-us/hotels/phxme-courtyard-phoenix-mesa/overview/" target="_blank">Courtyard by Marriott Phoenix Mesa</a></h4>
+        <p>1221 S Westwood, Mesa, AZ 85210 · <strong>~10 min from venue</strong></p>
+        <p style="font-size:0.83rem; color:var(--text-l); margin-top:0.3rem;">Clean, comfortable, and consistently good — a smart choice for guests who want quality without the resort price tag. Easy freeway access makes getting around a breeze.</p>
+        <p class="hotel-contact"><a href="tel:+14804613000">(480) 461-3000</a></p>
+        <span class="tag">Mid-Range</span>
+      </div>
+
+      <p class="hotel-tier-label">Great for Families</p>
+
+      <div class="hotel-item">
+        <h4><a href="https://www.marriott.com/en-us/hotels/phxmx-residence-inn-phoenix-mesa-east/overview/" target="_blank">Residence Inn by Marriott Phoenix Mesa East</a></h4>
+        <p>10243 E Hampton Ave, Mesa, AZ 85209 · <strong>~15 min from venue</strong></p>
+        <p style="font-size:0.83rem; color:var(--text-l); margin-top:0.3rem;">Suite-style rooms with full kitchens — the best bet for families or anyone staying a few nights. Spread out, cook breakfast, and make it your home base for the Phoenix trip.</p>
+        <p class="hotel-contact"><a href="tel:+14803739000">(480) 373-9000</a></p>
+        <span class="tag">Suites · Family-Friendly</span>
+      </div>
+
+    </div>
+
+    <iframe
+      class="map-embed"
+      src="https://maps.google.com/maps?q=1940+E+Main+St,+Mesa,+AZ+85203&z=15&output=embed"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Venue Map"
+    ></iframe>
+    <p style="font-size:0.75rem; color:var(--text-l); margin-top:0.5rem; text-align:center; display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;">
+      <a href="https://maps.google.com/?q=1940+E+Main+St+Mesa+AZ+85203" target="_blank" style="color:var(--sage-d);">Open in Google Maps →</a>
+      <a href="https://maps.apple.com/?q=Garden+Tuscana&address=1940+E+Main+St,Mesa,AZ+85203" target="_blank" style="color:var(--sage-d);">Open in Apple Maps →</a>
+    </p>
+
+  </div>
+</section>
+
+<!-- ==================== REGISTRY ==================== -->
+<section id="registry">
+  <div class="page-header">
+    <p class="label">Gifts</p>
+    <h2>Our Registry</h2>
+  </div>
+
+  <div class="registry-container">
+    <p class="registry-note">
+      Your presence at our wedding is the greatest gift of all. If you'd like to give something, we've registered at a few of our favorite places.
+    </p>
+
+    <div class="registry-layout">
+
+      <!-- Honeymoon Fund (top, centered) -->
+      <div class="registry-fund-wrap">
+        <div class="registry-card registry-card--fund" onclick="toggleFund()" role="button" tabindex="0" onkeydown="if(event.key==='Enter')toggleFund()">
+          <div class="registry-icon">✈️</div>
+          <h3>Honeymoon Fund</h3>
+          <p>Help us start our adventure together</p>
+          <div class="arrow fund-toggle-label">Contribute ▾</div>
+        </div>
+        <!-- Payment options — expand in-flow, pushing stores down -->
+        <div class="fund-panel" id="fundPanel">
+          <p class="fund-intro">Every little bit gets us closer to somewhere beautiful. Thank you! 💕</p>
+          <div class="fund-buttons">
+            <a href="https://venmo.com/u/SenorJPH" target="_blank" class="fund-btn fund-btn--venmo">Venmo</a>
+            <a href="https://paypal.me/SenorJPH" target="_blank" class="fund-btn fund-btn--paypal">PayPal</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Store cards (below, side by side) -->
+      <div class="registry-grid">
+        <a href="#" class="registry-card" target="_blank">
+          <div class="registry-icon">🏠</div>
+          <h3>Crate &amp; Barrel</h3>
+          <p>Home essentials, kitchen, and entertaining</p>
+          <div class="arrow">View Registry →</div>
+        </a>
+        <a href="#" class="registry-card" target="_blank">
+          <div class="registry-icon">🎁</div>
+          <h3>Amazon</h3>
+          <p>Everything from kitchen to home décor</p>
+          <div class="arrow">View Registry →</div>
+        </a>
+      </div>
+
+    </div>
+
+    <p style="text-align:center; margin-top:2.5rem; font-size:0.82rem; color:var(--text-l);">
+      <em>Registry links for Crate &amp; Barrel and Amazon coming soon!</em>
+    </p>
+  </div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section id="faq">
+  <div class="page-header">
+    <p class="label">Questions?</p>
+    <h2>FAQs</h2>
+    <p>Answers to the things we know you're wondering</p>
+  </div>
+
+  <div class="faq-container">
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What is the dress code?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-answer">
+        <p>We're asking guests to dress in <strong>cocktail attire</strong> — think dresses, dress pants, blazers, and heels or nice flats. Since part of the evening is in a garden setting, keep in mind that stilettos may sink into grass! We want you to look great <em>and</em> be comfortable.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Is the ceremony indoors or outdoors?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-answer">
+        <p>The ceremony will be held in the garden at Garden Tuscana. The cocktail hour and reception will move inside the reception hall. March in Arizona is typically beautiful weather — but we'll have contingency plans in place just in case.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Are children welcome?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-answer">
+        <p>Children are absolutely welcome and we'd love to have them celebrate with us! Feel free to bring the whole family — the more the merrier.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Is there parking at the venue?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes! Complimentary parking is available on-site at Garden Tuscana. If you plan to enjoy drinks at the reception, we encourage you to arrange a rideshare (Uber/Lyft) home — it's an easy pickup right from the venue entrance.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        When is the RSVP deadline?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-answer">
+        <p>Please RSVP by <strong>February 1, 2027</strong> so we can finalize our guest list and seating arrangements. We'd love to know you're coming!</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Can I take photos during the ceremony?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes — we <em>love</em> it! Please take as many photos as you'd like throughout the day and share them with us. We'd love to see the wedding through your eyes. Tag us or send your favorites our way after the celebration!</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Will there be food options for dietary restrictions?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-answer">
+        <p>We're still finalizing the menu! We'll send an email to all guests once meal options are confirmed so you can make your selection. We'll do our best to accommodate dietary restrictions.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Still have questions?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-answer">
+        <p style="margin-bottom:1rem;">Send us a quick note and we'll get back to you as soon as we can!</p>
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field-contact"
+          onsubmit="handleContact(event)"
+          id="contact-form"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p style="display:none;"><label>Don't fill: <input name="bot-field-contact" /></label></p>
+          <div style="margin-bottom:0.75rem;">
+            <label style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-l);display:block;margin-bottom:0.3rem;">Your Name</label>
+            <input type="text" name="contact_name" required placeholder="Jane Smith" style="width:100%;padding:0.6rem 0.8rem;border:1px solid var(--border);font-family:Lato,sans-serif;font-size:0.88rem;color:var(--text);" />
+          </div>
+          <div style="margin-bottom:0.75rem;">
+            <label style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-l);display:block;margin-bottom:0.3rem;">Your Email</label>
+            <input type="email" name="contact_email" required placeholder="your@email.com" style="width:100%;padding:0.6rem 0.8rem;border:1px solid var(--border);font-family:Lato,sans-serif;font-size:0.88rem;color:var(--text);" />
+          </div>
+          <div style="margin-bottom:0.75rem;">
+            <label style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-l);display:block;margin-bottom:0.3rem;">Question</label>
+            <textarea name="contact_message" required placeholder="What would you like to know?" rows="3" style="width:100%;padding:0.6rem 0.8rem;border:1px solid var(--border);font-family:Lato,sans-serif;font-size:0.88rem;color:var(--text);resize:vertical;"></textarea>
+          </div>
+          <button type="submit" style="background:var(--sage);color:#fff;border:none;padding:0.65rem 1.5rem;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;">Send Message</button>
+          <span id="contact-success" style="display:none;margin-left:1rem;font-size:0.85rem;color:var(--sage-d);">✓ Message sent!</span>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== PHOTOS ==================== -->
+<section id="photos">
+  <div class="page-header">
+    <p class="label">Share the Love</p>
+    <h2>Photo Gallery</h2>
+    <p>Capture the moments and share them with us — we'd love to see the day through your eyes</p>
+  </div>
+
+  <div class="photos-container">
+
+    <p class="photos-intro">
+      No app or account needed — just tap below, pick your photos, and they go straight to our collection.
+    </p>
+
+    <!-- Hidden native file input — triggers phone's camera/photo sheet -->
+    <input type="file" id="photo-file-input" accept="image/*,video/*" multiple style="display:none" />
+
+    <!-- Big tap zone -->
+    <div class="upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Tap to add photos">
+      <div class="upload-zone-icon">📷</div>
+      <div class="upload-zone-title">Tap to Add Photos</div>
+      <div class="upload-zone-sub">Choose from your camera roll or take a new photo</div>
+    </div>
+
+    <!-- Upload in progress -->
+    <div class="upload-progress-wrap" id="upload-progress-wrap" style="display:none">
+      <div class="upload-progress-bar-bg">
+        <div class="upload-progress-bar" id="upload-progress-bar"></div>
+      </div>
+      <p class="upload-status-text" id="upload-status-text">Uploading your photos…</p>
+    </div>
+
+    <!-- Error -->
+    <div class="upload-error" id="upload-error"></div>
+
+    <!-- Success state -->
+    <div class="upload-done-wrap" id="upload-done-wrap" style="display:none">
+      <div class="upload-done-icon">✓</div>
+      <p class="upload-done-text">Photos shared — thank you!</p>
+      <button class="btn-upload-more" id="upload-more-btn">Add More Photos</button>
+    </div>
+
+    <!-- Thumbnail previews -->
+    <div class="photo-preview-grid" id="photo-preview-grid"></div>
+
+    <div class="ornament" style="margin-top:2.5rem">— ✦ —</div>
+
+  </div>
+</section>
+
+<!-- ==================== RSVP ==================== -->
+<section id="rsvp">
+  <div class="page-header">
+    <p class="label">You're Invited</p>
+    <h2>RSVP</h2>
+    <p>We can't wait to celebrate with you</p>
+  </div>
+
+  <div class="rsvp-container">
+    <p class="rsvp-deadline">Kindly reply by February 1, 2027</p>
+
+    <!-- Netlify Form — the data-netlify attribute enables form collection -->
+    <form
+      name="rsvp"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      onsubmit="handleRsvp(event)"
+    >
+      <!-- Required hidden fields for Netlify -->
+      <input type="hidden" name="form-name" value="rsvp" />
+      <p style="display:none;">
+        <label>Don't fill this out: <input name="bot-field" /></label>
+      </p>
+
+      <!-- Your Information -->
+      <h3 class="form-section-label">Your Information</h3>
+
+      <div class="form-group">
+        <label for="full-name">Your Full Name *</label>
+        <input type="text" id="full-name" name="full_name" required placeholder="Jane Smith" autocomplete="name" style="font-size:1rem; padding:0.85rem 1rem;" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required placeholder="your@email.com" autocomplete="email" style="font-size:1rem; padding:0.85rem 1rem;" />
+      </div>
+
+      <!-- Attendance -->
+      <h3 class="form-section-label">Will You Be There?</h3>
+
+      <div class="form-group">
+        <div class="attend-buttons">
+          <label class="attend-option" id="attend-yes-label">
+            <input type="radio" name="attending" value="yes" required onchange="toggleAttending(true)" style="position:absolute;opacity:0;" />
+            <span class="attend-icon">🎉</span>
+            <span class="attend-text">Joyfully Accepts</span>
+          </label>
+          <label class="attend-option" id="attend-no-label">
+            <input type="radio" name="attending" value="no" onchange="toggleAttending(false)" style="position:absolute;opacity:0;" />
+            <span class="attend-icon">😔</span>
+            <span class="attend-text">Regretfully Declines</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Show this block only when attending -->
+      <div id="attending-details" style="display:none;">
+
+        <div class="form-group">
+          <label for="guest-count">How many people are attending? *</label>
+          <div class="select-wrapper">
+            <select id="guest-count" name="guest_count" style="font-size:1rem; padding:0.85rem 1rem;">
+              <option value="">Select number of guests…</option>
+              <option value="1">Just me (1 guest)</option>
+              <option value="2">2 guests</option>
+              <option value="3">3 guests</option>
+              <option value="4">4 guests</option>
+              <option value="5">5 guests</option>
+              <option value="6">6 guests</option>
+              <option value="7">7 guests</option>
+              <option value="8">8 guests</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="guest-names">Names of all guests attending *</label>
+          <textarea id="guest-names" name="guest_names" rows="3" required placeholder="e.g. Jane Smith, John Smith, Emma Smith" style="font-size:1rem; padding:0.85rem 1rem;"></textarea>
+          <p style="font-size:0.78rem; color:var(--text-l); margin-top:0.4rem;">Please list the full name of every person attending</p>
+        </div>
+
+        <div class="form-group">
+          <label for="song">Song Request 🎵</label>
+          <input type="text" id="song" name="song_request" placeholder="What song gets you on the dance floor?" style="font-size:1rem; padding:0.85rem 1rem;" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message to James &amp; Marie</label>
+        <textarea id="message" name="message" rows="4" placeholder="Share your well-wishes, a memory, or just say hi!" style="font-size:1rem; padding:0.85rem 1rem;"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" style="font-size:1rem; padding:1.1rem; letter-spacing:0.12em;">Send RSVP</button>
+    </form>
+
+    <!-- Success message (shown after submission) -->
+    <div class="rsvp-success" id="rsvp-success">
+      <div class="checkmark">🌿</div>
+      <h3>Thank you!</h3>
+      <p>We've received your RSVP and can't wait to celebrate with you.<br>We'll be in touch with any updates as the date approaches.</p>
+      <br>
+      <p style="font-size:0.82rem; color:var(--text-l);">— James &amp; Marie</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <strong>James &amp; Marie · March 27, 2027</strong><br><br>
+  Garden Tuscana Reception Hall · Mesa, Arizona<br><br>
+  Made with love ♡
+</footer>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script>
+  // ================================================================
+  // PHOTO UPLOAD — native file picker → Cloudinary REST API
+  // Cloud: dkoop646q  |  Preset: wedding_photos (unsigned)
+  // ================================================================
+  (function initPhotoUpload() {
+    var CLOUD    = 'dkoop646q';
+    var PRESET   = 'wedding_photos';
+    var ENDPOINT = 'https://api.cloudinary.com/v1_1/' + CLOUD + '/auto/upload';
+
+    function $(id) { return document.getElementById(id); }
+
+    function showEl(id)  { var el = $(id); if (el) el.style.display = ''; }
+    function hideEl(id)  { var el = $(id); if (el) el.style.display = 'none'; }
+
+    function setProgress(pct, label) {
+      var bar = $('upload-progress-bar');
+      if (bar) bar.style.width = pct + '%';
+      var txt = $('upload-status-text');
+      if (txt) txt.textContent = label || 'Uploading…';
+    }
+
+    function showError(msg) {
+      var el = $('upload-error');
+      if (!el) return;
+      el.textContent = msg;
+      el.style.display = 'block';
+      setTimeout(function() { el.style.display = 'none'; }, 6000);
+    }
+
+    function addPreview(file, state) {
+      var grid = $('photo-preview-grid');
+      if (!grid) return null;
+      var item = document.createElement('div');
+      item.className = 'photo-preview-item ' + (state || 'preview-uploading');
+      var url = URL.createObjectURL(file);
+      item.style.backgroundImage = 'url(' + url + ')';
+      item.style.backgroundSize  = 'cover';
+      item.style.backgroundPosition = 'center';
+      grid.appendChild(item);
+      return item;
+    }
+
+    function markPreviewDone(item) {
+      if (!item) return;
+      item.classList.remove('preview-uploading');
+      item.classList.add('preview-done');
+    }
+
+    function uploadFiles(files) {
+      if (!files || !files.length) return;
+
+      // Reset state
+      hideEl('upload-zone');
+      hideEl('upload-done-wrap');
+      showEl('upload-progress-wrap');
+      $('upload-progress-bar').style.width = '0%';
+
+      var total  = files.length;
+      var done   = 0;
+      var errors = 0;
+      var items  = [];
+
+      // Build preview thumbnails immediately
+      for (var i = 0; i < files.length; i++) {
+        items.push(addPreview(files[i], 'preview-uploading'));
+      }
+
+      function onOne(idx, success) {
+        done++;
+        if (success) markPreviewDone(items[idx]);
+        else errors++;
+        var pct = Math.round((done / total) * 100);
+        setProgress(pct, 'Uploading ' + done + ' of ' + total + '…');
+
+        if (done === total) {
+          hideEl('upload-progress-wrap');
+          if (errors === total) {
+            showError('Upload failed. Please check your connection and try again.');
+            showEl('upload-zone');
+          } else {
+            showEl('upload-done-wrap');
+            if (errors > 0) showError(errors + ' photo(s) failed to upload.');
+          }
+        }
+      }
+
+      for (var j = 0; j < files.length; j++) {
+        (function(idx, file) {
+          var fd = new FormData();
+          fd.append('file', file);
+          fd.append('upload_preset', PRESET);
+
+          fetch(ENDPOINT, { method: 'POST', body: fd })
+            .then(function(r) {
+              if (!r.ok) throw new Error('HTTP ' + r.status);
+              return r.json();
+            })
+            .then(function() { onOne(idx, true); })
+            .catch(function() { onOne(idx, false); });
+        })(j, files[j]);
+      }
+    }
+
+    function wire() {
+      var input = $('photo-file-input');
+      var zone  = $('upload-zone');
+      var more  = $('upload-more-btn');
+
+      if (!input || !zone) return;
+
+      // Tap the zone → open native file picker
+      zone.addEventListener('click', function() { input.click(); });
+      zone.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); }
+      });
+
+      // Files chosen
+      input.addEventListener('change', function() {
+        if (input.files && input.files.length) {
+          uploadFiles(input.files);
+          input.value = ''; // reset so same files can be re-selected
+        }
+      });
+
+      // "Add More Photos" button — reset and show zone again
+      if (more) {
+        more.addEventListener('click', function() {
+          hideEl('upload-done-wrap');
+          showEl('upload-zone');
+          input.click();
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', wire);
+    } else {
+      wire();
+    }
+  })();
+  // ================================================================
+
+  // ---- Photo mosaic per-section ----
+  // Serve smaller tiles on mobile (tiles are ~50vw on mobile vs ~25-50vw on desktop)
+  const _tileSize = window.innerWidth <= 640 ? 'w_380,h_280' : 'w_580,h_420';
+  const _xfm = 'f_auto,q_auto:good,c_fill,g_faces,' + _tileSize;
+  const _base = 'https://res.cloudinary.com/dkoop646q/image/upload/' + _xfm + '/wedding_photos/';
+  const _baseV = 'https://res.cloudinary.com/dkoop646q/image/upload/' + _xfm + '/';
+  const _mosaicPhotos = {
+    A: _baseV + 'v1782797522/wedding_photos/q5trr5w9pppufqrpjahb.heic',
+    B: _baseV + 'v1782797524/wedding_photos/jeb8jhygs9s3sucoz5wr.heic',
+    C: _baseV + 'v1782797527/wedding_photos/dgfrn497bsuhojbpa33q.heic',
+    D: _baseV + 'v1782798823/wedding_photos/ljjruk7n00e1zor7z8h5.heic',
+    E: _baseV + 'v1782798825/wedding_photos/rwwli63aybcpjoxap2cu.heic',
+    F: _base + 'bbyizgukrggxrcysx4k6',
+    G: _base + 't0maxhn0a9fdylcf3v76',
+    H: _base + 'cwlpiahyfmojs6jdxq0m',
+    I: _base + 'ehhypsrsgxxxrkp606lq',
+    J: _base + 'nvx56mtuuvxgmu2u0j9l',
+    K: _base + 'fekauwyofbabxxygpi5c',
+    L: _base + 'txtl4y8dckvksxeyfjcg',
+    M: _base + 'bbetw2c22kyivtyjrnlq',
+    N: _base + 'n6q84p2et8gcvlbcwd4m',
+    O: _base + 'xzu6c7brtbuscpdzk91t',
+    P: _base + 'qcqm5euyxqclcaqhfegu',
+    Q: _base + 'm4zoyudlum0ikpcl0y4o',
+    R: _base + 'fpjx9pjgk4g3iqfjqpel',
+    S: _base + 'ewo7ia3sqj8epapcgysl',
+    T: _base + 'ur3futfxtls4alzrfus3',
+    U: _base + 'ldlasmmcokfhmj5mklmz',
+    V: _base + 'rhmiizsrehaucrxumcgr',
+    W: _base + 'lbxtm3vpdpprihljagnp',
+    X: _base + 'vawrmmgemypcnavak8uw',
+    Y: _base + 'ixpiqoyjyobhi1s9sil1'
+  };
+  const _mosaicLayouts = {
+    home:     ['A','B','C','D','E','F','G','H','I','J','K','L'],
+    schedule: ['M','N','O','P','Q','R','S','T','U','V','W','X'],
+    travel:   ['Y','A','C','E','G','I','K','M','O','Q','S','U'],
+    registry: ['B','D','F','H','J','L','N','P','R','T','V','X'],
+    faq:      ['W','Y','B','D','F','H','J','L','N','P','R','T'],
+    photos:   ['A','E','I','M','Q','U','Y','C','G','K','O','S'],
+    rsvp:     ['V','X','B','F','J','N','R','T','A','E','I','M']
+  };
+  function updateMosaic(id) {
+    const mosaic = document.querySelector('.bg-mosaic');
+    const layout = _mosaicLayouts[id] || _mosaicLayouts.home;
+    // Remove loaded to reset animation when switching sections
+    mosaic.classList.remove('loaded');
+    mosaic.querySelectorAll('.bg-mosaic-tile').forEach(function(tile, i) {
+      tile.style.backgroundImage = "url('" + _mosaicPhotos[layout[i]] + "')";
+    });
+    // Trigger fade-in after a minimal delay (lets browser start fetching)
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() { mosaic.classList.add('loaded'); });
+    });
+  }
+
+  // ---- Navigation ----
+  function showSection(id) {
+    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+
+    const section = document.getElementById(id);
+    const navLink = document.getElementById('nav-' + id);
+
+    if (section) section.classList.add('active');
+    if (navLink) navLink.classList.add('active');
+    updateMosaic(id);
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function toggleMobile() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  function closeMobile() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+
+  // ---- Countdown ----
+  function updateCountdown() {
+    const wedding = new Date('2027-03-27T17:00:00-07:00'); // 5pm MST
+    const now = new Date();
+    const diff = wedding - now;
+
+    if (diff <= 0) {
+      document.getElementById('countdown').innerHTML = '<p style="font-family:Cormorant Garamond,serif;font-size:2rem;color:var(--brown)">Today is the day! 🎉</p>';
+      return;
+    }
+
+    const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs  = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('cd-days').textContent  = days;
+    document.getElementById('cd-hours').textContent = hours;
+    document.getElementById('cd-mins').textContent  = mins;
+    document.getElementById('cd-secs').textContent  = secs;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // ---- FAQ accordion ----
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = item.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-answer').classList.remove('open');
+    });
+
+    // Open clicked (unless it was already open)
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
+
+  // ---- RSVP attendance toggle ----
+  function toggleAttending(yes) {
+    document.getElementById('attending-details').style.display = yes ? 'block' : 'none';
+    // Visual highlight on the selected button
+    document.getElementById('attend-yes-label').classList.toggle('selected', yes);
+    document.getElementById('attend-no-label').classList.toggle('selected', !yes);
+  }
+
+  // ---- RSVP form submit ----
+  const SONG_SHEET_URL = 'https://script.google.com/macros/s/AKfycbyLZ5KEYUW_rfCr3F1NHHUDmJo8UpBfXJiAUfLa1IjBDbeIJzp2MwrLJ9vdEtACvEIV/exec';
+  const RSVP_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwFxtUsyR5LatVvMqObRjwyDiQsEkyHsN0kLcJbLFqzY60pWTvE1hWQuDW7b6aFYg279A/exec';
+
+  function handleRsvp(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+
+    // Submit to Netlify Forms
+    const netlifySubmit = fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data).toString()
+    });
+
+    // Send full RSVP to Google Sheet + email notification
+    const rsvpSubmit = fetch(RSVP_SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({
+        name:        data.get('full_name')   || '',
+        email:       data.get('email')       || '',
+        attending:   data.get('attending')   || '',
+        guestCount:  data.get('guest_count') || '',
+        guestNames:  data.get('guest_names') || '',
+        songRequest: data.get('song_request') || ''
+      })
+    });
+
+    // If there's a song request, also send to the Song Requests sheet
+    const songRequest = (data.get('song_request') || '').trim();
+    const songSubmit = songRequest
+      ? fetch(SONG_SHEET_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify({
+            guestName: data.get('full_name') || '',
+            email: data.get('email') || '',
+            song_request: songRequest
+          })
+        })
+      : Promise.resolve();
+
+    Promise.allSettled([netlifySubmit, rsvpSubmit, songSubmit]).then(() => {
+      form.style.display = 'none';
+      document.getElementById('rsvp-success').style.display = 'block';
+    });
+  }
+
+  // ---- Contact form submit ----
+  function handleContact(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    const btn = form.querySelector('button[type="submit"]');
+    const success = document.getElementById('contact-success');
+
+    // Post to Netlify Forms (backup storage)
+    const netlifySubmit = fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data).toString()
+    });
+
+    // Post to Apps Script to trigger email notification
+    const scriptSubmit = fetch(RSVP_SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({
+        type:    'contact',
+        name:    data.get('contact_name')    || '',
+        email:   data.get('contact_email')   || '',
+        message: data.get('contact_message') || ''
+      })
+    });
+
+    Promise.allSettled([netlifySubmit, scriptSubmit]).then(() => {
+      btn.style.display = 'none';
+      success.style.display = 'inline';
+    });
+  }
+
+  // ---- Handle URL hash for direct links (e.g. from QR code) ----
+  function handleHash() {
+    const hash = window.location.hash.replace('#', '');
+    const valid = ['home', 'schedule', 'travel', 'registry', 'faq', 'photos', 'rsvp'];
+    if (hash && valid.includes(hash)) {
+      showSection(hash);
+    } else {
+      showSection('home'); // default — also fires initial mosaic load
+    }
+  }
+  handleHash();
+  window.addEventListener('hashchange', handleHash);
+
+  /* ---- Apple Calendar download ---- */
+  function downloadICS() {
+    var ics = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Marie & James Wedding//EN',
+      'BEGIN:VEVENT',
+      'DTSTART;TZID=America/Phoenix:20270327T170000',
+      'DTEND;TZID=America/Phoenix:20270327T230000',
+      'SUMMARY:Marie & James Wedding',
+      'LOCATION:Garden Tuscana\\, 1940 E Main St\\, Mesa\\, AZ 85203',
+      'DESCRIPTION:Join us for the wedding ceremony & reception of Marie & James!',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
+    var blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'marie-james-wedding.ics';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  /* ---- Honeymoon Fund toggle ---- */
+  function toggleFund() {
+    var card  = document.querySelector('.registry-card--fund');
+    var panel = document.getElementById('fundPanel');
+    if (!card || !panel) return;          // safety guard
+    var isOpen = panel.classList.contains('open');
+    panel.classList.toggle('open', !isOpen);
+    card.classList.toggle('open', !isOpen);
+  }
+</script>
+
+</body>
+</html>
