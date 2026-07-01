@@ -10,6 +10,16 @@
   <meta property="og:description" content="Join us as we celebrate the marriage of James & Marie on March 27, 2027 at Garden Tuscana, Mesa, AZ." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jamesmariehalaby.com" />
+  <meta property="og:image" content="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_1200,h_630/v1782797522/wedding_photos/q5trr5w9pppufqrpjahb.heic" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Marie & James — March 27, 2027" />
+  <meta name="twitter:description" content="Join us as we celebrate the marriage of James & Marie on March 27, 2027 at Garden Tuscana, Mesa, AZ." />
+  <meta name="twitter:image" content="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_1200,h_630/v1782797522/wedding_photos/q5trr5w9pppufqrpjahb.heic" />
+  <link rel="canonical" href="https://jamesmariehalaby.com/" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%90%3C/text%3E%3C/svg%3E" />
   <!-- DNS + TCP pre-warm for every external host we'll hit -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,23 +28,49 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" /></noscript>
-  <!-- Preload home-section mosaic tiles (desktop) so they're in cache before JS runs -->
-  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/v1782797522/wedding_photos/q5trr5w9pppufqrpjahb.heic" />
-  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/v1782797524/wedding_photos/jeb8jhygs9s3sucoz5wr.heic" />
-  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/v1782797527/wedding_photos/dgfrn497bsuhojbpa33q.heic" />
-  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/v1782798823/wedding_photos/ljjruk7n00e1zor7z8h5.heic" />
-  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/v1782798825/wedding_photos/rwwli63aybcpjoxap2cu.heic" />
-  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/bbyizgukrggxrcysx4k6" />
-  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/t0maxhn0a9fdylcf3v76" />
-  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/cwlpiahyfmojs6jdxq0m" />
-  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/ehhypsrsgxxxrkp606lq" />
-  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/nvx56mtuuvxgmu2u0j9l" />
-  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/fekauwyofbabxxygpi5c" />
-  <link rel="preload" as="image" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/txtl4y8dckvksxeyfjcg" />
+  <!-- Preload home-section mosaic tiles so they're in cache before JS runs.
+       Two sets, gated by media query, so mobile doesn't also fetch the desktop-sized
+       tile it will never use (was previously double-downloading images on phones). -->
+  <!-- Desktop (>640px): matches _tileSize 'w_580,h_420' in the mosaic script -->
+  <link rel="preload" as="image" media="(min-width: 641px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/v1782797522/wedding_photos/q5trr5w9pppufqrpjahb.heic" />
+  <link rel="preload" as="image" media="(min-width: 641px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/v1782797524/wedding_photos/jeb8jhygs9s3sucoz5wr.heic" />
+  <link rel="preload" as="image" media="(min-width: 641px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/v1782797527/wedding_photos/dgfrn497bsuhojbpa33q.heic" />
+  <link rel="preload" as="image" media="(min-width: 641px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/v1782798823/wedding_photos/ljjruk7n00e1zor7z8h5.heic" />
+  <link rel="preload" as="image" media="(min-width: 641px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/v1782798825/wedding_photos/rwwli63aybcpjoxap2cu.heic" />
+  <link rel="preload" as="image" media="(min-width: 641px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/bbyizgukrggxrcysx4k6" />
+  <link rel="preload" as="image" media="(min-width: 641px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/t0maxhn0a9fdylcf3v76" />
+  <link rel="preload" as="image" media="(min-width: 641px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/cwlpiahyfmojs6jdxq0m" />
+  <link rel="preload" as="image" media="(min-width: 641px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/ehhypsrsgxxxrkp606lq" />
+  <link rel="preload" as="image" media="(min-width: 641px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/nvx56mtuuvxgmu2u0j9l" />
+  <link rel="preload" as="image" media="(min-width: 641px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/fekauwyofbabxxygpi5c" />
+  <link rel="preload" as="image" media="(min-width: 641px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_580,h_420/wedding_photos/txtl4y8dckvksxeyfjcg" />
+  <!-- Mobile (<=640px): matches _tileSize 'w_380,h_280' in the mosaic script -->
+  <link rel="preload" as="image" media="(max-width: 640px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_380,h_280/v1782797522/wedding_photos/q5trr5w9pppufqrpjahb.heic" />
+  <link rel="preload" as="image" media="(max-width: 640px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_380,h_280/v1782797524/wedding_photos/jeb8jhygs9s3sucoz5wr.heic" />
+  <link rel="preload" as="image" media="(max-width: 640px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_380,h_280/v1782797527/wedding_photos/dgfrn497bsuhojbpa33q.heic" />
+  <link rel="preload" as="image" media="(max-width: 640px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_380,h_280/v1782798823/wedding_photos/ljjruk7n00e1zor7z8h5.heic" />
+  <link rel="preload" as="image" media="(max-width: 640px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_380,h_280/v1782798825/wedding_photos/rwwli63aybcpjoxap2cu.heic" />
+  <link rel="preload" as="image" media="(max-width: 640px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_380,h_280/wedding_photos/bbyizgukrggxrcysx4k6" />
+  <link rel="preload" as="image" media="(max-width: 640px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_380,h_280/wedding_photos/t0maxhn0a9fdylcf3v76" />
+  <link rel="preload" as="image" media="(max-width: 640px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_380,h_280/wedding_photos/cwlpiahyfmojs6jdxq0m" />
+  <link rel="preload" as="image" media="(max-width: 640px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_380,h_280/wedding_photos/ehhypsrsgxxxrkp606lq" />
+  <link rel="preload" as="image" media="(max-width: 640px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_380,h_280/wedding_photos/nvx56mtuuvxgmu2u0j9l" />
+  <link rel="preload" as="image" media="(max-width: 640px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_380,h_280/wedding_photos/fekauwyofbabxxygpi5c" />
+  <link rel="preload" as="image" media="(max-width: 640px)" href="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_380,h_280/wedding_photos/txtl4y8dckvksxeyfjcg" />
   <!-- Cloudinary upload uses direct REST API — no widget script needed -->
   <style>
     /* ===================== RESET & BASE ===================== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Snappier, flash-free touch interactions on Android/iOS: removes the
+       gray tap-highlight flash and disables the double-tap-to-zoom delay
+       on things people tap repeatedly (nav, buttons, cards). */
+    a, button, .attend-option, .upload-zone, .registry-card, .faq-question,
+    .cal-btn, .fund-btn, .btn-primary, .btn-outline, .submit-btn, .btn-upload-more,
+    input[type="radio"], .hamburger, .nav-logo {
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
 
     :root {
       --cream:    #FEF0F4;   /* blush pink background */
@@ -58,7 +94,9 @@
       background: var(--cream);
       color: var(--text);
       min-height: 100vh;
+      min-height: 100dvh; /* avoids the iOS Safari address-bar jump */
       overflow-x: hidden;
+      overscroll-behavior-y: contain; /* stop rubber-band scroll chaining on iOS/Android */
     }
 
     h1, h2, h3, h4 {
@@ -72,6 +110,7 @@
       top: 0; left: 0; right: 0;
       z-index: 100;
       background: rgba(250, 245, 236, 0.97);
+      -webkit-backdrop-filter: blur(8px); /* unprefixed only works from Safari 18/iOS 18+ */
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
       height: 72px;
@@ -85,6 +124,7 @@
       font-weight: 500;
       color: var(--brown);
       letter-spacing: 0.05em;
+      text-decoration: none;
       cursor: pointer;
       white-space: nowrap;
       display: flex;
@@ -147,13 +187,18 @@
       min-height: 44px;
       align-items: center;
       justify-content: center;
+      background: transparent;
+      border: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
     }
     .hamburger span {
       display: block;
       width: 24px;
       height: 2px;
       background: var(--brown);
-      transition: all 0.3s;
+      transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
     }
 
     /* Mobile menu */
@@ -202,7 +247,8 @@
       inset: 0;
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 2fr;
-      grid-template-rows: 32vh 36vh 32vh;
+      grid-template-rows: 32fr 36fr 32fr; /* fr, not vh — always exactly fills this fixed/inset:0 box even
+                                              when iOS Safari's address bar shows/hides mid-scroll */
       z-index: 0;
       pointer-events: none;
       opacity: 0;
@@ -226,6 +272,7 @@
     section {
       display: none;
       min-height: 100vh;
+      min-height: 100dvh; /* avoids the iOS Safari address-bar jump */
       padding-top: 72px;
       position: relative;
       z-index: 2;
@@ -353,7 +400,7 @@
       border: 1px solid var(--brown);
       cursor: pointer;
       text-decoration: none;
-      transition: all 0.2s;
+      transition: background 0.2s, color 0.2s;
       margin-left: 1rem;
     }
     .btn-outline:hover {
@@ -925,6 +972,8 @@
       font-family: 'Lato', sans-serif;
       font-size: 0.9rem;
       color: var(--text);
+      -webkit-appearance: none;
+      -moz-appearance: none;
       appearance: none;
       transition: border-color 0.2s;
     }
@@ -1270,7 +1319,7 @@
       }
       .bg-mosaic {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(6, 16.67vh);
+        grid-template-rows: repeat(6, 1fr); /* fr instead of vh — see .bg-mosaic comment above */
       }
       .schedule-container,
       .travel-container,
@@ -1412,6 +1461,14 @@
       background: rgba(181, 206, 184, 0.15);
     }
 
+    /* The radio itself is visually hidden (opacity:0) so the whole card is
+       the click target — but keyboard users tabbing through still need to
+       see which option is focused. */
+    .attend-option:focus-within {
+      outline: 2px solid var(--sage-d);
+      outline-offset: 2px;
+    }
+
     .attend-icon {
       font-size: 1.75rem;
       line-height: 1;
@@ -1435,6 +1492,32 @@
     }
 
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Marie & James Wedding",
+    "startDate": "2027-03-27T17:00:00-07:00",
+    "endDate": "2027-03-27T23:00:00-07:00",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Garden Tuscana Reception Hall",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1940 E Main St",
+        "addressLocality": "Mesa",
+        "addressRegion": "AZ",
+        "postalCode": "85203",
+        "addressCountry": "US"
+      }
+    },
+    "image": ["https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_1200,h_630/v1782797522/wedding_photos/q5trr5w9pppufqrpjahb.heic"],
+    "description": "Join us as we celebrate the marriage of James & Marie on March 27, 2027 at Garden Tuscana, Mesa, AZ.",
+    "organizer": { "@type": "Person", "name": "Marie & James" }
+  }
+  </script>
 </head>
 <body>
 
@@ -1457,7 +1540,7 @@
 
 <!-- ==================== NAVIGATION ==================== -->
 <nav>
-  <div class="nav-logo" onclick="showSection('home')">M &amp; J</div>
+  <a href="#" class="nav-logo" onclick="showSection('home'); return false;">M &amp; J</a>
   <ul class="nav-links">
     <li><a href="#" onclick="showSection('home'); return false;" id="nav-home" class="active">Home</a></li>
     <li><a href="#" onclick="showSection('registry'); return false;" id="nav-registry">Registry</a></li>
@@ -1467,9 +1550,9 @@
     <li><a href="#" onclick="showSection('photos'); return false;" id="nav-photos">Photos</a></li>
     <li><a href="#" onclick="showSection('rsvp'); return false;" id="nav-rsvp">RSVP</a></li>
   </ul>
-  <div class="hamburger" onclick="toggleMobile()" id="hamburger">
+  <button type="button" class="hamburger" onclick="toggleMobile()" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
@@ -1568,7 +1651,7 @@
     <div class="calendar-buttons">
       <a class="cal-btn cal-btn--google"
          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Marie+%26+James+Wedding&dates=20270327T170000%2F20270327T230000&ctz=America%2FPhoenix&details=Wedding+ceremony+%26+reception+of+Marie+%26+James!&location=Garden+Tuscana%2C+1940+E+Main+St%2C+Mesa%2C+AZ+85203"
-         target="_blank">Add to Google Calendar</a>
+         target="_blank" rel="noopener noreferrer">Add to Google Calendar</a>
       <button class="cal-btn cal-btn--apple" onclick="downloadICS()">Add to Apple Calendar</button>
     </div>
   </div>
@@ -1657,8 +1740,8 @@
           Garden Tuscana Reception Hall<br>
           1940 E Main St<br>
           Mesa, AZ 85203<br><br>
-          <a href="https://maps.google.com/?q=1940+E+Main+St+Mesa+AZ+85203" target="_blank">Open in Google Maps →</a><br>
-          <a href="https://maps.apple.com/?q=Garden+Tuscana&address=1940+E+Main+St,Mesa,AZ+85203" target="_blank">Open in Apple Maps →</a>
+          <a href="https://maps.google.com/?q=1940+E+Main+St+Mesa+AZ+85203" target="_blank" rel="noopener noreferrer">Open in Google Maps →</a><br>
+          <a href="https://maps.apple.com/?q=Garden+Tuscana&address=1940+E+Main+St,Mesa,AZ+85203" target="_blank" rel="noopener noreferrer">Open in Apple Maps →</a>
         </p>
       </div>
 
@@ -1687,7 +1770,7 @@
       <p class="hotel-tier-label">⭐ Our Top Pick</p>
 
       <div class="hotel-item hotel-item--featured">
-        <h4><a href="https://www.marriott.com/en-us/hotels/phxww-sheraton-mesa-hotel-at-wrigleyville-west/overview/" target="_blank">Sheraton Mesa Hotel at Wrigleyville West</a></h4>
+        <h4><a href="https://www.marriott.com/en-us/hotels/phxww-sheraton-mesa-hotel-at-wrigleyville-west/overview/" target="_blank" rel="noopener noreferrer">Sheraton Mesa Hotel at Wrigleyville West</a></h4>
         <p>860 N Riverview, Mesa, AZ 85201 · <strong>~10 min from venue</strong></p>
         <p style="font-size:0.83rem; color:var(--text-l); margin-top:0.3rem;">Right next to Sloan Park — Cubs spring training games happen the same weekend. A great excuse to extend your trip!</p>
         <p class="hotel-contact"><a href="tel:+14806641221">(480) 664-1221</a></p>
@@ -1697,7 +1780,7 @@
       <p class="hotel-tier-label">Resort & Luxury (~20–25 min)</p>
 
       <div class="hotel-item">
-        <h4><a href="https://www.globalambassadorhotel.com/" target="_blank">The Global Ambassador</a></h4>
+        <h4><a href="https://www.globalambassadorhotel.com/" target="_blank" rel="noopener noreferrer">The Global Ambassador</a></h4>
         <p>4360 E Camelback Rd, Phoenix, AZ 85018 · <strong>~20 min from venue</strong></p>
         <p style="font-size:0.83rem; color:var(--text-l); margin-top:0.3rem;">Phoenix's buzziest boutique luxury hotel — Forbes 5-star, stunning rooftop, phenomenal restaurants. A real splurge-worthy experience.</p>
         <p class="hotel-contact"><a href="tel:+14808002211">(480) 800-2211</a></p>
@@ -1705,7 +1788,7 @@
       </div>
 
       <div class="hotel-item">
-        <h4><a href="https://www.thephoenician.com/" target="_blank">The Phoenician, A Luxury Collection Resort</a></h4>
+        <h4><a href="https://www.thephoenician.com/" target="_blank" rel="noopener noreferrer">The Phoenician, A Luxury Collection Resort</a></h4>
         <p>6000 E Camelback Rd, Scottsdale, AZ 85251 · <strong>~25 min from venue</strong></p>
         <p style="font-size:0.83rem; color:var(--text-l); margin-top:0.3rem;">Iconic Scottsdale resort with world-class spa, multiple pools, and sweeping Camelback Mountain views. Perfect for guests making a full weekend of it.</p>
         <p class="hotel-contact"><a href="tel:+14809418200">(480) 941-8200</a></p>
@@ -1715,7 +1798,7 @@
       <p class="hotel-tier-label">Solid Nearby Options (~10–15 min)</p>
 
       <div class="hotel-item">
-        <h4><a href="https://www.marriott.com/en-us/hotels/phxde-delta-hotels-phoenix-mesa/overview/" target="_blank">Delta Hotels by Marriott Phoenix Mesa</a></h4>
+        <h4><a href="https://www.marriott.com/en-us/hotels/phxde-delta-hotels-phoenix-mesa/overview/" target="_blank" rel="noopener noreferrer">Delta Hotels by Marriott Phoenix Mesa</a></h4>
         <p>200 N Centennial Way, Mesa, AZ 85201 · <strong>~10 min from venue</strong></p>
         <p style="font-size:0.83rem; color:var(--text-l); margin-top:0.3rem;">A polished Marriott upscale property right in the heart of Mesa — solid rooms, easy parking, and minutes from the venue. A reliable pick at a fair price point.</p>
         <p class="hotel-contact"><a href="tel:+14808988300">(480) 898-8300</a></p>
@@ -1723,7 +1806,7 @@
       </div>
 
       <div class="hotel-item">
-        <h4><a href="https://www.marriott.com/en-us/hotels/phxme-courtyard-phoenix-mesa/overview/" target="_blank">Courtyard by Marriott Phoenix Mesa</a></h4>
+        <h4><a href="https://www.marriott.com/en-us/hotels/phxme-courtyard-phoenix-mesa/overview/" target="_blank" rel="noopener noreferrer">Courtyard by Marriott Phoenix Mesa</a></h4>
         <p>1221 S Westwood, Mesa, AZ 85210 · <strong>~10 min from venue</strong></p>
         <p style="font-size:0.83rem; color:var(--text-l); margin-top:0.3rem;">Clean, comfortable, and consistently good — a smart choice for guests who want quality without the resort price tag. Easy freeway access makes getting around a breeze.</p>
         <p class="hotel-contact"><a href="tel:+14804613000">(480) 461-3000</a></p>
@@ -1733,7 +1816,7 @@
       <p class="hotel-tier-label">Great for Families</p>
 
       <div class="hotel-item">
-        <h4><a href="https://www.marriott.com/en-us/hotels/phxmx-residence-inn-phoenix-mesa-east/overview/" target="_blank">Residence Inn by Marriott Phoenix Mesa East</a></h4>
+        <h4><a href="https://www.marriott.com/en-us/hotels/phxmx-residence-inn-phoenix-mesa-east/overview/" target="_blank" rel="noopener noreferrer">Residence Inn by Marriott Phoenix Mesa East</a></h4>
         <p>10243 E Hampton Ave, Mesa, AZ 85209 · <strong>~15 min from venue</strong></p>
         <p style="font-size:0.83rem; color:var(--text-l); margin-top:0.3rem;">Suite-style rooms with full kitchens — the best bet for families or anyone staying a few nights. Spread out, cook breakfast, and make it your home base for the Phoenix trip.</p>
         <p class="hotel-contact"><a href="tel:+14803739000">(480) 373-9000</a></p>
@@ -1751,8 +1834,8 @@
       title="Venue Map"
     ></iframe>
     <p style="font-size:0.75rem; color:var(--text-l); margin-top:0.5rem; text-align:center; display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;">
-      <a href="https://maps.google.com/?q=1940+E+Main+St+Mesa+AZ+85203" target="_blank" style="color:var(--sage-d);">Open in Google Maps →</a>
-      <a href="https://maps.apple.com/?q=Garden+Tuscana&address=1940+E+Main+St,Mesa,AZ+85203" target="_blank" style="color:var(--sage-d);">Open in Apple Maps →</a>
+      <a href="https://maps.google.com/?q=1940+E+Main+St+Mesa+AZ+85203" target="_blank" rel="noopener noreferrer" style="color:var(--sage-d);">Open in Google Maps →</a>
+      <a href="https://maps.apple.com/?q=Garden+Tuscana&address=1940+E+Main+St,Mesa,AZ+85203" target="_blank" rel="noopener noreferrer" style="color:var(--sage-d);">Open in Apple Maps →</a>
     </p>
 
   </div>
@@ -1784,8 +1867,8 @@
         <div class="fund-panel" id="fundPanel">
           <p class="fund-intro">Every little bit gets us closer to somewhere beautiful. Thank you! 💕</p>
           <div class="fund-buttons">
-            <a href="https://venmo.com/u/SenorJPH" target="_blank" class="fund-btn fund-btn--venmo">Venmo</a>
-            <a href="https://paypal.me/SenorJPH" target="_blank" class="fund-btn fund-btn--paypal">PayPal</a>
+            <a href="https://venmo.com/u/SenorJPH" target="_blank" rel="noopener noreferrer" class="fund-btn fund-btn--venmo">Venmo</a>
+            <a href="https://paypal.me/SenorJPH" target="_blank" rel="noopener noreferrer" class="fund-btn fund-btn--paypal">PayPal</a>
           </div>
         </div>
       </div>
@@ -1805,7 +1888,7 @@
   <div class="faq-container">
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
         What is the dress code?
         <span class="faq-chevron">▾</span>
       </button>
@@ -1815,7 +1898,7 @@
     </div>
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
         Is the ceremony indoors or outdoors?
         <span class="faq-chevron">▾</span>
       </button>
@@ -1825,7 +1908,7 @@
     </div>
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
         Are children welcome?
         <span class="faq-chevron">▾</span>
       </button>
@@ -1835,7 +1918,7 @@
     </div>
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
         Is there parking at the venue?
         <span class="faq-chevron">▾</span>
       </button>
@@ -1845,7 +1928,7 @@
     </div>
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
         When is the RSVP deadline?
         <span class="faq-chevron">▾</span>
       </button>
@@ -1855,7 +1938,7 @@
     </div>
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
         Can I take photos during the ceremony?
         <span class="faq-chevron">▾</span>
       </button>
@@ -1865,7 +1948,7 @@
     </div>
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
         Will there be food options for dietary restrictions?
         <span class="faq-chevron">▾</span>
       </button>
@@ -1875,7 +1958,7 @@
     </div>
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
         Still have questions?
         <span class="faq-chevron">▾</span>
       </button>
@@ -1892,16 +1975,16 @@
           <input type="hidden" name="form-name" value="contact" />
           <p style="display:none;"><label>Don't fill: <input name="bot-field-contact" /></label></p>
           <div style="margin-bottom:0.75rem;">
-            <label style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-l);display:block;margin-bottom:0.3rem;">Your Name</label>
-            <input type="text" name="contact_name" required placeholder="Jane Smith" style="width:100%;padding:0.6rem 0.8rem;border:1px solid var(--border);font-family:Lato,sans-serif;font-size:0.88rem;color:var(--text);" />
+            <label for="contact-name" style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-l);display:block;margin-bottom:0.3rem;">Your Name</label>
+            <input type="text" id="contact-name" name="contact_name" required placeholder="Jane Smith" style="width:100%;padding:0.6rem 0.8rem;border:1px solid var(--border);font-family:Lato,sans-serif;font-size:0.88rem;color:var(--text);" />
           </div>
           <div style="margin-bottom:0.75rem;">
-            <label style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-l);display:block;margin-bottom:0.3rem;">Your Email</label>
-            <input type="email" name="contact_email" required placeholder="your@email.com" style="width:100%;padding:0.6rem 0.8rem;border:1px solid var(--border);font-family:Lato,sans-serif;font-size:0.88rem;color:var(--text);" />
+            <label for="contact-email" style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-l);display:block;margin-bottom:0.3rem;">Your Email</label>
+            <input type="email" id="contact-email" name="contact_email" required placeholder="your@email.com" style="width:100%;padding:0.6rem 0.8rem;border:1px solid var(--border);font-family:Lato,sans-serif;font-size:0.88rem;color:var(--text);" />
           </div>
           <div style="margin-bottom:0.75rem;">
-            <label style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-l);display:block;margin-bottom:0.3rem;">Question</label>
-            <textarea name="contact_message" required placeholder="What would you like to know?" rows="3" style="width:100%;padding:0.6rem 0.8rem;border:1px solid var(--border);font-family:Lato,sans-serif;font-size:0.88rem;color:var(--text);resize:vertical;"></textarea>
+            <label for="contact-message" style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-l);display:block;margin-bottom:0.3rem;">Question</label>
+            <textarea id="contact-message" name="contact_message" required placeholder="What would you like to know?" rows="3" style="width:100%;padding:0.6rem 0.8rem;border:1px solid var(--border);font-family:Lato,sans-serif;font-size:0.88rem;color:var(--text);resize:vertical;"></textarea>
           </div>
           <button type="submit" style="background:var(--sage);color:#fff;border:none;padding:0.65rem 1.5rem;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;">Send Message</button>
           <span id="contact-success" style="display:none;margin-left:1rem;font-size:0.85rem;color:var(--sage-d);">✓ Message sent!</span>
@@ -2024,7 +2107,7 @@
         <div class="form-group">
           <label for="guest-count">How many people are attending? *</label>
           <div class="select-wrapper">
-            <select id="guest-count" name="guest_count" style="font-size:1rem; padding:0.85rem 1rem;">
+            <select id="guest-count" name="guest_count" required style="font-size:1rem; padding:0.85rem 1rem;">
               <option value="">Select number of guests…</option>
               <option value="1">Just me (1 guest)</option>
               <option value="2">2 guests</option>
@@ -2055,7 +2138,8 @@
         <textarea id="message" name="message" rows="4" placeholder="Share your well-wishes, a memory, or just say hi!" style="font-size:1rem; padding:0.85rem 1rem;"></textarea>
       </div>
 
-      <button type="submit" class="submit-btn" style="font-size:1rem; padding:1.1rem; letter-spacing:0.12em;">Send RSVP</button>
+      <p id="rsvp-error" style="display:none; margin-bottom:0.75rem; padding:0.75rem 1rem; background:#fff0ef; border:1px solid var(--rose); font-size:0.83rem; color:var(--brown);">Something went wrong sending your RSVP — please check your connection and try again. If it keeps failing, feel free to message us directly.</p>
+      <button type="submit" class="submit-btn" id="rsvp-submit-btn" style="font-size:1rem; padding:1.1rem; letter-spacing:0.12em;">Send RSVP</button>
     </form>
 
     <!-- Success message (shown after submission) -->
@@ -2127,10 +2211,27 @@
       item.classList.add('preview-done');
     }
 
-    function uploadFiles(files) {
-      if (!files || !files.length) return;
+    var MAX_FILE_BYTES = 100 * 1024 * 1024; // 100MB — guards against a huge video stalling the UI
 
-      // Reset state
+    function uploadFiles(allFiles) {
+      if (!allFiles || !allFiles.length) return;
+
+      // Drop anything oversized before we even start
+      var files = [];
+      var tooBig = 0;
+      for (var k = 0; k < allFiles.length; k++) {
+        if (allFiles[k].size > MAX_FILE_BYTES) tooBig++;
+        else files.push(allFiles[k]);
+      }
+      if (!files.length) {
+        showError('Those file(s) are too large (100MB max). Please try smaller photos/videos.');
+        return;
+      }
+
+      // Reset state — clear previous batch's thumbnails so they don't pile up
+      // indefinitely across multiple "Add More Photos" rounds.
+      var grid = $('photo-preview-grid');
+      if (grid) grid.innerHTML = '';
       hideEl('upload-zone');
       hideEl('upload-done-wrap');
       showEl('upload-progress-wrap');
@@ -2138,7 +2239,7 @@
 
       var total  = files.length;
       var done   = 0;
-      var errors = 0;
+      var errors = tooBig;
       var items  = [];
 
       // Build preview thumbnails immediately
@@ -2160,7 +2261,7 @@
             showEl('upload-zone');
           } else {
             showEl('upload-done-wrap');
-            if (errors > 0) showError(errors + ' photo(s) failed to upload.');
+            if (errors > 0) showError(errors + ' file(s) failed to upload' + (tooBig ? ' (some were over the 100MB limit)' : '') + '.');
           }
         }
       }
@@ -2170,6 +2271,7 @@
           var fd = new FormData();
           fd.append('file', file);
           fd.append('upload_preset', PRESET);
+          fd.append('folder', 'wedding_photos'); // keep guest uploads alongside the existing gallery photos
 
           fetch(ENDPOINT, { method: 'POST', body: fd })
             .then(function(r) {
@@ -2293,11 +2395,15 @@
   }
 
   function toggleMobile() {
-    document.getElementById('mobileMenu').classList.toggle('open');
+    var isOpen = document.getElementById('mobileMenu').classList.toggle('open');
+    var btn = document.getElementById('hamburger');
+    if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   }
 
   function closeMobile() {
     document.getElementById('mobileMenu').classList.remove('open');
+    var btn = document.getElementById('hamburger');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
   }
 
   // ---- Countdown ----
@@ -2322,8 +2428,24 @@
     document.getElementById('cd-secs').textContent  = secs;
   }
 
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  // Pause the per-second countdown tick when the tab/app isn't visible
+  // (backgrounded, phone locked, switched apps) — no point waking up the
+  // CPU every second for numbers nobody's looking at, and it's one less
+  // thing competing for resources when the guest switches back.
+  var _countdownTimer = null;
+  function startCountdownTimer() {
+    if (_countdownTimer) return;
+    updateCountdown();
+    _countdownTimer = setInterval(updateCountdown, 1000);
+  }
+  function stopCountdownTimer() {
+    if (_countdownTimer) { clearInterval(_countdownTimer); _countdownTimer = null; }
+  }
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) stopCountdownTimer();
+    else startCountdownTimer();
+  });
+  startCountdownTimer();
 
   // ---- FAQ accordion ----
   function toggleFaq(btn) {
@@ -2335,12 +2457,14 @@
     document.querySelectorAll('.faq-item').forEach(i => {
       i.classList.remove('open');
       i.querySelector('.faq-answer').classList.remove('open');
+      i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
     });
 
     // Open clicked (unless it was already open)
     if (!isOpen) {
       item.classList.add('open');
       answer.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
     }
   }
 
@@ -2350,6 +2474,27 @@
     // Visual highlight on the selected button
     document.getElementById('attend-yes-label').classList.toggle('selected', yes);
     document.getElementById('attend-no-label').classList.toggle('selected', !yes);
+
+    // Required attributes are NOT automatically skipped for fields hidden via
+    // display:none (that exemption only applies to type="hidden", disabled,
+    // or fields inside a <datalist> — see MDN's willValidate docs). Without
+    // this, someone declining could get a blocking "please fill out this
+    // field" error on a field they can no longer see, and could never submit.
+    var guestCount = document.getElementById('guest-count');
+    var guestNames = document.getElementById('guest-names');
+    if (guestCount) guestCount.required = yes;
+    if (guestNames) guestNames.required = yes;
+
+    // Also clear any values entered before switching to "decline", so a
+    // guest who first said yes, filled things in, then changed their mind
+    // doesn't have stale guest/song data silently included in the submission
+    // (hidden fields still get submitted with the form regardless of display).
+    if (!yes) {
+      if (guestCount) guestCount.value = '';
+      if (guestNames) guestNames.value = '';
+      var song = document.getElementById('song');
+      if (song) song.value = '';
+    }
   }
 
   // ---- RSVP form submit ----
@@ -2360,6 +2505,12 @@
     e.preventDefault();
     const form = e.target;
     const data = new FormData(form);
+    const submitBtn = document.getElementById('rsvp-submit-btn');
+    const errorBox = document.getElementById('rsvp-error');
+
+    // Prevent double-submits (e.g. impatient double-click) and give feedback
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+    if (errorBox) errorBox.style.display = 'none';
 
     // Submit to Netlify Forms
     const netlifySubmit = fetch('/', {
@@ -2398,9 +2549,25 @@
         })
       : Promise.resolve();
 
-    Promise.allSettled([netlifySubmit, rsvpSubmit, songSubmit]).then(() => {
-      form.style.display = 'none';
-      document.getElementById('rsvp-success').style.display = 'block';
+    Promise.allSettled([netlifySubmit, rsvpSubmit, songSubmit]).then((results) => {
+      // allSettled always "succeeds" — it doesn't mean the RSVP actually went anywhere.
+      // netlifySubmit is a normal (non no-cors) fetch, so we CAN read its real status.
+      // rsvpSubmit is no-cors so we can't read its status, but if it rejected outright
+      // (not just a non-2xx response) that means the request never left the browser —
+      // e.g. fully offline / DNS failure. Only treat this as a true failure if BOTH
+      // the readable channel failed AND the opaque channel never even fired.
+      const netlifyResult = results[0];
+      const rsvpResult    = results[1];
+      const netlifyOk   = netlifyResult.status === 'fulfilled' && netlifyResult.value.ok;
+      const rsvpAttempted = rsvpResult.status === 'fulfilled'; // no-cors "fulfills" unless the network request itself couldn't be made
+
+      if (netlifyOk || rsvpAttempted) {
+        form.style.display = 'none';
+        document.getElementById('rsvp-success').style.display = 'block';
+      } else {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send RSVP'; }
+        if (errorBox) errorBox.style.display = 'block';
+      }
     });
   }
 
@@ -2411,6 +2578,8 @@
     const data = new FormData(form);
     const btn = form.querySelector('button[type="submit"]');
     const success = document.getElementById('contact-success');
+
+    if (btn) btn.disabled = true;
 
     // Post to Netlify Forms (backup storage)
     const netlifySubmit = fetch('/', {
@@ -2432,9 +2601,15 @@
       })
     });
 
-    Promise.allSettled([netlifySubmit, scriptSubmit]).then(() => {
-      btn.style.display = 'none';
-      success.style.display = 'inline';
+    Promise.allSettled([netlifySubmit, scriptSubmit]).then((results) => {
+      const netlifyOk     = results[0].status === 'fulfilled' && results[0].value.ok;
+      const scriptAttempted = results[1].status === 'fulfilled';
+      if (netlifyOk || scriptAttempted) {
+        btn.style.display = 'none';
+        success.style.display = 'inline';
+      } else if (btn) {
+        btn.disabled = false; // let them retry — most likely fully offline
+      }
     });
   }
 
