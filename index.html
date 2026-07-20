@@ -10,13 +10,15 @@
   <meta property="og:description" content="Join us as we celebrate the marriage of James & Marie on March 27, 2027 at Garden Tuscana, Mesa, AZ." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jamesmariehalaby.com" />
-  <meta property="og:image" content="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_1200,h_630/v1782797522/wedding_photos/q5trr5w9pppufqrpjahb.heic" />
+  <!-- f_jpg (not f_auto) for social-preview images: link scrapers (Facebook,
+       iMessage, WhatsApp) don't reliably handle content-negotiated formats -->
+  <meta property="og:image" content="https://res.cloudinary.com/dkoop646q/image/upload/f_jpg,q_auto:good,c_fill,g_faces,w_1200,h_630/v1782797522/wedding_photos/q5trr5w9pppufqrpjahb.heic" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Marie & James — March 27, 2027" />
   <meta name="twitter:description" content="Join us as we celebrate the marriage of James & Marie on March 27, 2027 at Garden Tuscana, Mesa, AZ." />
-  <meta name="twitter:image" content="https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_1200,h_630/v1782797522/wedding_photos/q5trr5w9pppufqrpjahb.heic" />
+  <meta name="twitter:image" content="https://res.cloudinary.com/dkoop646q/image/upload/f_jpg,q_auto:good,c_fill,g_faces,w_1200,h_630/v1782797522/wedding_photos/q5trr5w9pppufqrpjahb.heic" />
   <link rel="canonical" href="https://jamesmariehalaby.com/" />
   <meta name="robots" content="noindex, nofollow" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%90%3C/text%3E%3C/svg%3E" />
@@ -109,7 +111,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(250, 245, 236, 0.97);
+      background: rgba(254, 240, 244, 0.97); /* matches --cream blush, not the old cream tone */
       -webkit-backdrop-filter: blur(8px); /* unprefixed only works from Safari 18/iOS 18+ */
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
@@ -898,8 +900,10 @@
       transition: max-height 0.4s ease, padding 0.3s;
     }
 
+    /* No fixed max-height here — toggleFaq() sets an inline max-height from the
+       answer's real scrollHeight, so tall content (the contact form) is never
+       clipped on small phones or with large system font sizes. */
     .faq-answer.open {
-      max-height: 400px;
       padding-bottom: 1.25rem;
     }
 
@@ -1226,7 +1230,7 @@
     }
     .photo-preview-item .preview-uploading {
       position: absolute; inset: 0;
-      background: rgba(250,245,236,0.7);
+      background: rgba(254,240,244,0.7); /* matches --cream blush */
       display: flex; align-items: center; justify-content: center;
       font-size: 1.5rem;
     }
@@ -1392,6 +1396,21 @@
       }
     }
 
+    /* Respect users who've asked their OS to reduce motion: skip the mosaic
+       fade, fund-panel reveal, and smooth scrolling (content still appears
+       instantly — nothing is hidden, only the animation is removed). */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .bg-mosaic.loaded { animation: none; opacity: 1; }
+      .fund-panel.open { animation: none; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+
+    /* Comfortable 44px touch targets for the calendar buttons on phones */
+    @media (max-width: 480px) {
+      .cal-btn { min-height: 44px; }
+    }
+
     /* Very small phones */
     @media (max-width: 360px) {
       .countdown {
@@ -1513,7 +1532,7 @@
         "addressCountry": "US"
       }
     },
-    "image": ["https://res.cloudinary.com/dkoop646q/image/upload/f_auto,q_auto:good,c_fill,g_faces,w_1200,h_630/v1782797522/wedding_photos/q5trr5w9pppufqrpjahb.heic"],
+    "image": ["https://res.cloudinary.com/dkoop646q/image/upload/f_jpg,q_auto:good,c_fill,g_faces,w_1200,h_630/v1782797522/wedding_photos/q5trr5w9pppufqrpjahb.heic"],
     "description": "Join us as we celebrate the marriage of James & Marie on March 27, 2027 at Garden Tuscana, Mesa, AZ.",
     "organizer": { "@type": "Person", "name": "Marie & James" }
   }
@@ -1568,7 +1587,7 @@
 <!-- ==================== HOME ==================== -->
 <section id="home" class="active">
   <!-- Background botanical SVG -->
-  <svg class="hero-bg-leaves" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <svg class="hero-bg-leaves" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <g fill="#7A9E7E">
       <!-- Large leaf top-left -->
       <ellipse cx="80" cy="80" rx="60" ry="20" transform="rotate(-40 80 80)"/>
@@ -1650,7 +1669,7 @@
     <p>Saturday, March 27, 2027 at Garden Tuscana Reception Hall</p>
     <div class="calendar-buttons">
       <a class="cal-btn cal-btn--google"
-         href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Marie+%26+James+Wedding&dates=20270327T170000%2F20270327T230000&ctz=America%2FPhoenix&details=Wedding+ceremony+%26+reception+of+Marie+%26+James!&location=Garden+Tuscana%2C+1940+E+Main+St%2C+Mesa%2C+AZ+85203"
+         href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Marie+%26+James+Wedding&dates=20270327T163000%2F20270327T230000&ctz=America%2FPhoenix&details=Wedding+ceremony+%26+reception+of+Marie+%26+James!+Doors+open+4%3A30+PM%3B+ceremony+begins+5%3A00+PM.&location=Garden+Tuscana%2C+1940+E+Main+St%2C+Mesa%2C+AZ+85203"
          target="_blank" rel="noopener noreferrer">Add to Google Calendar</a>
       <button class="cal-btn cal-btn--apple" onclick="downloadICS()">Add to Apple Calendar</button>
     </div>
@@ -1857,7 +1876,7 @@
 
       <!-- Honeymoon Fund (top, centered) -->
       <div class="registry-fund-wrap">
-        <div class="registry-card registry-card--fund" onclick="toggleFund()" role="button" tabindex="0" onkeydown="if(event.key==='Enter')toggleFund()">
+        <div class="registry-card registry-card--fund" onclick="toggleFund()" role="button" tabindex="0" aria-expanded="false" aria-controls="fundPanel" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFund();}">
           <div class="registry-icon">✈️</div>
           <h3>Honeymoon Fund</h3>
           <p>Help us start our adventure together</p>
@@ -2166,6 +2185,15 @@
   // ================================================================
   // PHOTO UPLOAD — native file picker → Cloudinary REST API
   // Cloud: dkoop646q  |  Preset: wedding_photos (unsigned)
+  //
+  // ⚠️ SECURITY — the preset name below is public, so ANYONE can upload
+  // to this Cloudinary account. The 100MB check below is client-side only
+  // and easily bypassed. Harden it in the Cloudinary console
+  // (Settings → Upload → Upload presets → wedding_photos):
+  //   1. Allowed formats: restrict to image/video types (jpg, png, heic, mp4…)
+  //   2. Max file size: set a server-side limit (e.g. 100MB)
+  //   3. Consider enabling the moderation queue for incoming uploads
+  //   4. Disable this preset after the wedding weekend
   // ================================================================
   (function initPhotoUpload() {
     var CLOUD    = 'dkoop646q';
@@ -2192,12 +2220,17 @@
       setTimeout(function() { el.style.display = 'none'; }, 6000);
     }
 
+    // Track blob preview URLs so we can release their memory when the grid
+    // is cleared for the next batch (they were previously never revoked).
+    var _previewUrls = [];
+
     function addPreview(file, state) {
       var grid = $('photo-preview-grid');
       if (!grid) return null;
       var item = document.createElement('div');
       item.className = 'photo-preview-item ' + (state || 'preview-uploading');
       var url = URL.createObjectURL(file);
+      _previewUrls.push(url);
       item.style.backgroundImage = 'url(' + url + ')';
       item.style.backgroundSize  = 'cover';
       item.style.backgroundPosition = 'center';
@@ -2232,6 +2265,9 @@
       // indefinitely across multiple "Add More Photos" rounds.
       var grid = $('photo-preview-grid');
       if (grid) grid.innerHTML = '';
+      // Release the previous batch's blob URLs now that their thumbnails are gone
+      _previewUrls.forEach(function(u) { try { URL.revokeObjectURL(u); } catch (e) {} });
+      _previewUrls = [];
       hideEl('upload-zone');
       hideEl('upload-done-wrap');
       showEl('upload-progress-wrap');
@@ -2256,7 +2292,11 @@
 
         if (done === total) {
           hideEl('upload-progress-wrap');
-          if (errors === total) {
+          // ">= total" (not "=== total"): errors starts at tooBig, so when a
+          // batch mixes oversized files with files that all fail, errors can
+          // EXCEED total — "===" used to fall through and show the success
+          // panel even though nothing was actually uploaded.
+          if (errors >= total) {
             showError('Upload failed. Please check your connection and try again.');
             showEl('upload-zone');
           } else {
@@ -2391,6 +2431,14 @@
     if (navLink) navLink.classList.add('active');
     updateMosaic(id);
 
+    // Keep the URL hash in sync with the visible section, so refreshing or
+    // copying/sharing the link lands on the same section instead of Home.
+    // replaceState (not pushState / location.hash) avoids piling history
+    // entries and doesn't re-trigger the hashchange listener.
+    if (window.location.hash !== '#' + id) {
+      try { history.replaceState(null, '', '#' + id); } catch (e) { /* ignore (e.g. sandboxed preview) */ }
+    }
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -2405,6 +2453,11 @@
     var btn = document.getElementById('hamburger');
     if (btn) btn.setAttribute('aria-expanded', 'false');
   }
+
+  // Escape closes the mobile menu (small accessibility nicety)
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeMobile();
+  });
 
   // ---- Countdown ----
   function updateCountdown() {
@@ -2456,7 +2509,9 @@
     // Close all
     document.querySelectorAll('.faq-item').forEach(i => {
       i.classList.remove('open');
-      i.querySelector('.faq-answer').classList.remove('open');
+      const a = i.querySelector('.faq-answer');
+      a.classList.remove('open');
+      a.style.maxHeight = '';
       i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
     });
 
@@ -2464,6 +2519,10 @@
     if (!isOpen) {
       item.classList.add('open');
       answer.classList.add('open');
+      // Size to actual content instead of a fixed cap — a fixed 400px clipped
+      // the contact form (and hid its Send button) on small phones. The +150
+      // buffer covers textarea resizing and larger system font settings.
+      answer.style.maxHeight = (answer.scrollHeight + 150) + 'px';
       btn.setAttribute('aria-expanded', 'true');
     }
   }
@@ -2530,7 +2589,11 @@
         attending:   data.get('attending')   || '',
         guestCount:  data.get('guest_count') || '',
         guestNames:  data.get('guest_names') || '',
-        songRequest: data.get('song_request') || ''
+        songRequest: data.get('song_request') || '',
+        // Include the personal message — previously this only went to Netlify
+        // Forms, which no longer exists on GitHub Pages, so messages were
+        // silently lost. Now it reaches the Google Sheet + email like the rest.
+        message:     data.get('message') || ''
       })
     });
 
@@ -2632,12 +2695,26 @@
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
       'PRODID:-//Marie & James Wedding//EN',
+      // VTIMEZONE definition for the TZID below — Apple/Google/Outlook don't
+      // strictly need it, but stricter calendar apps do. Arizona has no DST,
+      // so a single STANDARD block covers every date.
+      'BEGIN:VTIMEZONE',
+      'TZID:America/Phoenix',
+      'BEGIN:STANDARD',
+      'DTSTART:19700101T000000',
+      'TZOFFSETFROM:-0700',
+      'TZOFFSETTO:-0700',
+      'TZNAME:MST',
+      'END:STANDARD',
+      'END:VTIMEZONE',
       'BEGIN:VEVENT',
-      'DTSTART;TZID=America/Phoenix:20270327T170000',
+      // Calendar event starts at DOORS OPEN (4:30 PM), not the 5:00 ceremony,
+      // so guests who rely on the calendar reminder arrive in time to be seated.
+      'DTSTART;TZID=America/Phoenix:20270327T163000',
       'DTEND;TZID=America/Phoenix:20270327T230000',
       'SUMMARY:Marie & James Wedding',
       'LOCATION:Garden Tuscana\\, 1940 E Main St\\, Mesa\\, AZ 85203',
-      'DESCRIPTION:Join us for the wedding ceremony & reception of Marie & James!',
+      'DESCRIPTION:Join us for the wedding ceremony & reception of Marie & James! Doors open 4:30 PM\\; ceremony begins 5:00 PM.',
       'END:VEVENT',
       'END:VCALENDAR'
     ].join('\r\n');
@@ -2660,6 +2737,7 @@
     var isOpen = panel.classList.contains('open');
     panel.classList.toggle('open', !isOpen);
     card.classList.toggle('open', !isOpen);
+    card.setAttribute('aria-expanded', String(!isOpen));
   }
 </script>
 
