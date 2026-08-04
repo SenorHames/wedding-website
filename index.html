@@ -109,7 +109,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(250, 245, 236, 0.97);
+      background: rgba(254, 240, 244, 0.97); /* matches --cream (#FEF0F4) — was a leftover of the old beige palette */
       -webkit-backdrop-filter: blur(8px); /* unprefixed only works from Safari 18/iOS 18+ */
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
@@ -1105,13 +1105,6 @@
       accent-color: var(--sage);
     }
 
-    .guest-block {
-      background: #fff;
-      border: 1px solid var(--border);
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
     /* ---- Per-guest name fields (one box per person, driven by guest count) ---- */
     .guest-name-fields {
       display: grid;
@@ -1123,13 +1116,6 @@
     }
     .guest-name-field label {
       font-size: 0.68rem;
-    }
-
-    .guest-block-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      color: var(--brown);
-      margin-bottom: 1rem;
     }
 
     .form-section-label {
@@ -1334,6 +1320,13 @@
     /* State overlays live on the item itself (the JS toggles these classes on
        .photo-preview-item directly — the old descendant selectors targeted child
        elements that were never created, so guests got no upload feedback at all) */
+    /* Video files get a film icon — background-image can't preview a video blob */
+    .photo-preview-item.preview-video::before {
+      content: '🎬';
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.75rem;
+    }
     .photo-preview-item.preview-uploading::after {
       content: '⏳';
       position: absolute; inset: 0;
@@ -1466,9 +1459,6 @@
         text-align: center;
         padding: 1rem 1.5rem;
         font-size: 0.85rem;
-      }
-.guest-block {
-        padding: 1rem;
       }
       /* Bigger inputs on mobile */
       input[type="text"],
@@ -2340,11 +2330,16 @@
       if (!grid) return null;
       var item = document.createElement('div');
       item.className = 'photo-preview-item ' + (state || 'preview-uploading');
-      var url = URL.createObjectURL(file);
-      item._blobUrl = url; // remembered so we can revoke it when the grid clears (memory leak fix)
-      item.style.backgroundImage = 'url(' + url + ')';
-      item.style.backgroundSize  = 'cover';
-      item.style.backgroundPosition = 'center';
+      if (file.type && file.type.indexOf('video') === 0) {
+        // background-image can't render a video blob — show a film icon instead
+        item.classList.add('preview-video');
+      } else {
+        var url = URL.createObjectURL(file);
+        item._blobUrl = url; // remembered so we can revoke it when the grid clears (memory leak fix)
+        item.style.backgroundImage = 'url(' + url + ')';
+        item.style.backgroundSize  = 'cover';
+        item.style.backgroundPosition = 'center';
+      }
       grid.appendChild(item);
       return item;
     }
@@ -2718,10 +2713,10 @@
 
   function collectGuestNames() {
     var wrap = document.getElementById('guest-name-fields');
-    if (!wrap) return '';
+    if (!wrap) return [];
     return Array.prototype.map.call(wrap.querySelectorAll('input'), function(inp) {
       return inp.value.trim();
-    }).filter(Boolean).join(', ');
+    }).filter(Boolean);
   }
 
   // ---- RSVP attendance toggle ----
@@ -2786,12 +2781,16 @@
         email:       data.get('email')       || '',
         attending:   data.get('attending')   || '',
         guestCount:  data.get('guest_count') || '',
-        // Individual per-guest inputs, joined into one consistently-formatted
-        // "Name, Name, Name" string — same payload key the Apps Script already
-        // writes to the Sheet, but now always cleanly comma-separated so the
-        // column splits/exports perfectly.
-        guestNames:  collectGuestNames(),
-        songRequest: data.get('song_request') || ''
+        // guestNamesList: one entry per guest box, in order — the Apps Script
+        // writes each to its own Guest N column (a name containing a comma can
+        // never shift columns this way). guestNames (joined) kept as fallback.
+        guestNamesList: collectGuestNames(),
+        guestNames:  collectGuestNames().join(', '),
+        songRequest: data.get('song_request') || '',
+        // Was missing since the original build — guests' "Message to James &
+        // Marie" was silently discarded (found by Grok review 2026-08-04; the
+        // Sheet's Message column + email template always supported it).
+        message:     data.get('message') || ''
       })
     });
 
