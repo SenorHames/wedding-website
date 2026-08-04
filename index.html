@@ -1112,6 +1112,19 @@
       margin-bottom: 1rem;
     }
 
+    /* ---- Per-guest name fields (one box per person, driven by guest count) ---- */
+    .guest-name-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+    }
+    @media (max-width: 500px) {
+      .guest-name-fields { grid-template-columns: 1fr; }
+    }
+    .guest-name-field label {
+      font-size: 0.68rem;
+    }
+
     .guest-block-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.1rem;
@@ -2237,7 +2250,7 @@
         <div class="form-group">
           <label for="guest-count">How many people are attending? *</label>
           <div class="select-wrapper">
-            <select id="guest-count" name="guest_count" required style="font-size:1rem; padding:0.85rem 1rem;">
+            <select id="guest-count" name="guest_count" required onchange="renderGuestFields(this.value)" style="font-size:1rem; padding:0.85rem 1rem;">
               <option value="">Select number of guests…</option>
               <option value="1">Just me (1 guest)</option>
               <option value="2">2 guests</option>
@@ -2251,10 +2264,10 @@
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="guest-names">Names of all guests attending *</label>
-          <textarea id="guest-names" name="guest_names" rows="3" required maxlength="1200" placeholder="e.g. Jane Smith, John Smith, Emma Smith" style="font-size:1rem; padding:0.85rem 1rem;"></textarea>
-          <p style="font-size:0.78rem; color:var(--text-l); margin-top:0.4rem;">Please list the full name of every person attending</p>
+        <div class="form-group" id="guest-names-group" style="display:none;">
+          <label>Who's coming? *</label>
+          <p style="font-size:0.78rem; color:var(--text-l); margin:-0.15rem 0 0.6rem;">One name per box — spouses, kids, everyone!</p>
+          <div class="guest-name-fields" id="guest-name-fields"></div>
         </div>
 
         <div class="form-group">
@@ -2637,6 +2650,80 @@
     }
   }
 
+  // ---- Per-guest name fields ----
+  // One input per attending guest, driven by the guest-count dropdown. Values are
+  // cached by position so changing the count (3 → 5 → 3 → 5) never loses names.
+  var _guestNameCache = [];
+
+  function renderGuestFields(count) {
+    var group = document.getElementById('guest-names-group');
+    var wrap  = document.getElementById('guest-name-fields');
+    if (!group || !wrap) return;
+    var n = parseInt(count, 10) || 0;
+
+    // Snapshot current values into the cache before rebuilding
+    wrap.querySelectorAll('input').forEach(function(inp, i) { _guestNameCache[i] = inp.value; });
+
+    wrap.innerHTML = '';
+    group.style.display = n > 0 ? '' : 'none';
+
+    for (var i = 0; i < n; i++) {
+      var div = document.createElement('div');
+      div.className = 'guest-name-field';
+      var label = document.createElement('label');
+      label.setAttribute('for', 'guest-name-' + (i + 1));
+      label.textContent = i === 0 ? 'Guest 1 — you *' : 'Guest ' + (i + 1) + ' *';
+      var inp = document.createElement('input');
+      inp.type = 'text';
+      inp.id = 'guest-name-' + (i + 1);
+      inp.name = 'guest_name_' + (i + 1);
+      inp.required = true;
+      inp.maxLength = 120;
+      inp.autocomplete = 'off';
+      inp.placeholder = i === 0 ? 'Your full name' : 'Full name';
+      inp.style.fontSize = '1rem';
+      inp.style.padding = '0.85rem 1rem';
+      inp.value = _guestNameCache[i] || '';
+      (function(idx) {
+        inp.addEventListener('input', function(e) { _guestNameCache[idx] = e.target.value; });
+      })(i);
+      div.appendChild(label);
+      div.appendChild(inp);
+      wrap.appendChild(div);
+    }
+
+    // Convenience: guest 1 is almost always the person filling the form
+    var first = document.getElementById('guest-name-1');
+    var fullName = document.getElementById('full-name');
+    if (first && fullName && !first.value && fullName.value) {
+      first.value = fullName.value;
+      _guestNameCache[0] = fullName.value;
+    }
+  }
+
+  // Keep guest 1 in sync while it still matches the typed full name
+  (function wireGuestOneSync() {
+    var fullName = document.getElementById('full-name');
+    if (!fullName) return;
+    var lastAuto = null;
+    fullName.addEventListener('input', function() {
+      var first = document.getElementById('guest-name-1');
+      if (first && (first.value === '' || first.value === lastAuto)) {
+        first.value = fullName.value;
+        _guestNameCache[0] = fullName.value;
+        lastAuto = fullName.value;
+      }
+    });
+  })();
+
+  function collectGuestNames() {
+    var wrap = document.getElementById('guest-name-fields');
+    if (!wrap) return '';
+    return Array.prototype.map.call(wrap.querySelectorAll('input'), function(inp) {
+      return inp.value.trim();
+    }).filter(Boolean).join(', ');
+  }
+
   // ---- RSVP attendance toggle ----
   function toggleAttending(yes) {
     document.getElementById('attending-details').style.display = yes ? 'block' : 'none';
@@ -2650,19 +2737,19 @@
     // this, someone declining could get a blocking "please fill out this
     // field" error on a field they can no longer see, and could never submit.
     var guestCount = document.getElementById('guest-count');
-    var guestNames = document.getElementById('guest-names');
     if (guestCount) guestCount.required = yes;
-    if (guestNames) guestNames.required = yes;
 
-    // Also clear any values entered before switching to "decline", so a
-    // guest who first said yes, filled things in, then changed their mind
-    // doesn't have stale guest/song data silently included in the submission
-    // (hidden fields still get submitted with the form regardless of display).
+    // Clear values (and REMOVE the dynamic per-guest name inputs — removed
+    // inputs can't block validation or leak stale data) when declining.
     if (!yes) {
       if (guestCount) guestCount.value = '';
-      if (guestNames) guestNames.value = '';
+      _guestNameCache = [];
+      renderGuestFields(0);
       var song = document.getElementById('song');
       if (song) song.value = '';
+    } else if (guestCount && guestCount.value) {
+      // Switching back to "yes" with a count still selected → re-show fields
+      renderGuestFields(guestCount.value);
     }
   }
 
@@ -2699,7 +2786,11 @@
         email:       data.get('email')       || '',
         attending:   data.get('attending')   || '',
         guestCount:  data.get('guest_count') || '',
-        guestNames:  data.get('guest_names') || '',
+        // Individual per-guest inputs, joined into one consistently-formatted
+        // "Name, Name, Name" string — same payload key the Apps Script already
+        // writes to the Sheet, but now always cleanly comma-separated so the
+        // column splits/exports perfectly.
+        guestNames:  collectGuestNames(),
         songRequest: data.get('song_request') || ''
       })
     });
