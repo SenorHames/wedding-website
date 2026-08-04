@@ -2271,7 +2271,7 @@
         <textarea id="message" name="message" rows="4" maxlength="3000" placeholder="Share your well-wishes, a memory, or just say hi!" style="font-size:1rem; padding:0.85rem 1rem;"></textarea>
       </div>
 
-      <p id="rsvp-error" style="display:none; margin-bottom:0.75rem; padding:0.75rem 1rem; background:#fff0ef; border:1px solid var(--rose); font-size:0.83rem; color:var(--brown);">Something went wrong sending your RSVP — please check your connection and try again. If it keeps failing, feel free to message us directly.</p>
+      <p id="rsvp-error" style="display:none; margin-bottom:0.75rem; padding:0.75rem 1rem; background:#fff0ef; border:1px solid var(--rose); font-size:0.83rem; color:var(--brown);">Something went wrong sending your RSVP — please try again. (Don't worry about accidentally sending it twice — we'd rather get it two times than zero!) If it keeps failing, feel free to message us directly.</p>
       <button type="submit" class="submit-btn" id="rsvp-submit-btn" style="font-size:1rem; padding:1.1rem; letter-spacing:0.12em;">Send RSVP</button>
     </form>
 
@@ -2809,13 +2809,20 @@
         })
       : Promise.resolve();
 
-    Promise.allSettled([rsvpSubmit, songSubmit]).then((results) => {
+    // 15s timeout: on 2026-08-04 we watched a live submission hang at Google's
+    // front end — the guest would have stared at "Sending…" forever (the request
+    // even executed server-side ~9 minutes later). If nothing settles in 15s we
+    // show the error banner and let them retry; a duplicate row is recoverable,
+    // a guest who gives up on a frozen button is not.
+    const SUBMIT_TIMEOUT_MS = 15000;
+    const timedOut = new Promise(function(resolve) { setTimeout(function() { resolve('timeout'); }, SUBMIT_TIMEOUT_MS); });
+
+    Promise.race([Promise.allSettled([rsvpSubmit, songSubmit]), timedOut]).then((result) => {
       // rsvpSubmit is a no-cors fetch, so we can't read its HTTP status — but if it
       // rejected outright (not just non-2xx) the request never left the browser at
-      // all (e.g. fully offline / DNS failure). That's our only failure signal now
-      // that the site is hosted on Cloudflare (the old Netlify Forms backup channel
-      // doesn't exist there).
-      const rsvpAttempted = results[0].status === 'fulfilled';
+      // all (e.g. fully offline / DNS failure). That, or the 15s timeout, are our
+      // only failure signals (no hosting-level form backup exists on this stack).
+      const rsvpAttempted = result !== 'timeout' && result[0].status === 'fulfilled';
 
       if (rsvpAttempted) {
         form.style.display = 'none';
@@ -2857,11 +2864,17 @@
       })
     });
 
-    scriptSubmit.then(() => {
-      // no-cors fetch fulfilled — the request left the browser
-      btn.style.display = 'none';
-      success.style.display = 'inline';
-    }).catch(() => {
+    // Same 15s hang guard as the RSVP form
+    const contactTimeout = new Promise(function(resolve) { setTimeout(function() { resolve('timeout'); }, 15000); });
+    Promise.race([scriptSubmit.then(function() { return 'ok'; }), contactTimeout]).then(function(result) {
+      if (result === 'ok') {
+        // no-cors fetch fulfilled — the request left the browser
+        btn.style.display = 'none';
+        success.style.display = 'inline';
+      } else if (btn) {
+        btn.disabled = false; // timed out — let them retry
+      }
+    }).catch(function() {
       if (btn) btn.disabled = false; // let them retry — most likely fully offline
     });
   }
